@@ -1,0 +1,21 @@
+type: object
+required:
+  - code
+  - name
+  - description
+  - category
+  - unit
+  - stock
+properties:
+  code:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  category:
+    type: string
+  unit:
+    type: string
+  stock:
+    type: number

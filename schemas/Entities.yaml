@@ -1,0 +1,105 @@
+type: object
+required:
+  - _id
+  - name
+  - kind
+  - address
+  - type
+  - parent
+  - status
+  - property
+  - createdAt
+  - createdBy
+  - updatedAt
+  - updatedBy
+properties:
+  _id:
+    type: string
+  name:
+    type: string
+  shortName:
+    type: string
+  kind:
+    type: string
+    enum:
+      - BRANCH
+      - WAREHOUSE
+  address:
+    type: object
+    required:
+      - isSameAsOrg
+      - street
+      - subdistrict
+      - district
+      - city
+    properties:
+      isSameAsOrg:
+        type: boolean
+      street:
+        type: string
+      subdistrict:
+        type: string
+      district:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      zipcode:
+        type: string
+  type:
+    type: string
+    enum:
+      - HOSPITAL
+      - CLINIC
+      - WAREHOUSE
+  parent:
+    type: object
+    properties:
+      organization:
+        $ref: ./Organization.yaml
+  status:
+    type: object
+    properties:
+      open:
+        type: boolean
+  unitCount:
+    type: number
+  employeeCount:
+    type: number
+  property:
+    type: object
+    oneOf:
+      - type: object
+        required:
+          - serving
+          - storageType
+        properties:
+          serving:
+            type: array
+            items:
+              type: string
+          storageType:
+            type: string
+            enum:
+              - MEDICAL SUPPLY
+              - NON-MEDICAL SUPPLY
+              - RAW FOOD
+              - PROCESSED FOOD
+              - OTHER
+              - ALL
+
+      - type: object
+        required:
+          - isMainBranch
+        properties:
+          isMainBranch:
+            type: boolean
+  createdAt:
+    type: string
+  createdBy:
+    type: string # TODO: user schema
+  updatedAt:
+    type: string
+  updatedBy:
+    type: string # TODO: user schema

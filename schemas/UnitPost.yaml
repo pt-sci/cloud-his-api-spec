@@ -1,0 +1,39 @@
+type: object
+required:
+  - name
+  - kind
+  - location
+  - status
+properties:
+  name:
+    type: string
+  shortName:
+    type: string
+  kind:
+    type: string
+    enum:
+      - MEDICAL
+      - ROOM
+      - NON-MEDICAL
+      - DEPOT
+  location:
+    type: object
+    required:
+      - floor
+      - number
+    properties:
+      floor:
+        type: string
+      number:
+        type: string
+  status:
+    type: object
+    required:
+      - availability:
+    properties:
+      availability:
+        type: string
+        enum:
+          - AVAILABLE
+          - MAINTENANCE
+          - NOT-AVAILABLE

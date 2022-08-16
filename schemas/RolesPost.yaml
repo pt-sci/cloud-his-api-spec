@@ -1,0 +1,16 @@
+type: object
+required:
+  - name
+  - shortname
+  - description
+properties:
+  name:
+    type: string
+  shortname:
+    type: string
+  description:
+    type: string
+  authorization:
+    type: array
+    items:
+      type: string

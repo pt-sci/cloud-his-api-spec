@@ -1,0 +1,40 @@
+type: object
+required:
+  - _id
+  - mrn
+  - unit
+  - doctor
+  - date
+  - time
+properties:
+  _id:
+    type: string
+  mrn:
+    type: string
+  unit:
+    type: string
+  doctor:
+    type: string
+  date:
+    type: string
+  time:
+    type: string
+  note:
+    type: string
+  status:
+    type: object
+    properties:
+      canceled:
+        type: boolean
+      registered:
+        type: boolean
+  registration:
+    type: string
+  createdAt:
+    type: string
+  createdBy:
+    type: string
+  updatedAt:
+    type: string
+  updatedBy:
+    type: string

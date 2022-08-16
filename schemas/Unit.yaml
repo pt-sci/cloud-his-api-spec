@@ -1,0 +1,65 @@
+type: object
+required:
+  - _id
+  - name
+  - kind
+  - parent
+  - location
+  - status
+  - createdAt
+  - createdBy
+  - updatedAt
+  - updatedBy
+properties:
+  _id:
+    type: string
+  name:
+    type: string
+  shortName:
+    type: string
+  kind:
+    type: string
+    enum:
+      - MEDICAL
+      - ROOM
+      - NON-MEDICAL
+      - DEPOT
+  parent:
+    type: object
+    required:
+      - organization
+      - entities
+    properties:
+      organization:
+        type: string
+      entities:
+        $ref: ./Entities.yaml
+  location:
+    type: object
+    required:
+      - floor
+      - number
+    properties:
+      floor:
+        type: string
+      number:
+        type: string
+  status:
+    type: object
+    required:
+      - availability:
+    properties:
+      availability:
+        type: string
+        enum:
+          - AVAILABLE
+          - MAINTENANCE
+          - NOT-AVAILABLE
+  createdAt:
+    type: string
+  createdBy:
+    type: string # TODO: user schema
+  updatedAt:
+    type: string
+  updatedBy:
+    type: string # TODO: user schema

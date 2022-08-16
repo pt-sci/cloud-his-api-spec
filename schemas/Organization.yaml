@@ -1,0 +1,42 @@
+type: object
+required:
+  - _id
+  - name
+  - createdAt
+  - updatedAt
+  - updatedBy
+properties:
+  _id:
+    type: string
+  name:
+    type: string
+  address:
+    type: object
+    required:
+      - street
+      - subdistrict
+      - district
+      - city
+    properties:
+      street:
+        type: string
+      subdistrict:
+        type: string
+      district:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      zipcode:
+        type: string
+    entitiesCount:
+      type: number
+    userCount:
+      type: number
+    createdAt:
+      type: string
+    updatedAt:
+      type: string
+    updatedBy:
+      type: string # TODO: user schema

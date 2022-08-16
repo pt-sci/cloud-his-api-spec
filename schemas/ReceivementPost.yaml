@@ -1,0 +1,20 @@
+type: object
+required:
+  - order
+  - item
+  - quantity
+  - invoice
+properties:
+  order:
+    type: string # TODO: po schema
+  item:
+    $ref: ./Items.yaml
+  quantity:
+    type: number
+  invoice:
+    type: object
+    required:
+      - number
+    properties:
+      number:
+        type: string

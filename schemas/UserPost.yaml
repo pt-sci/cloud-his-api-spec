@@ -1,0 +1,17 @@
+type: object
+required:
+  - username
+  - password
+properties:
+  username:
+    type: string
+  password:
+    type: string
+  roles:
+    type: array
+    items:
+      type: string
+  employees:
+    type: array
+    items:
+      $ref: ./Employee.yaml

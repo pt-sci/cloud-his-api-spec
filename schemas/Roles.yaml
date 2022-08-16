@@ -1,0 +1,36 @@
+type: object
+required:
+  - _id
+  - parent
+  - name
+  - shortname
+  - description
+  - authorization
+properties:
+  _id:
+    type: string
+  parent:
+    type: object
+    required:
+      - organization
+    properties:
+      organization:
+        type: string
+  name:
+    type: string
+  shortname:
+    type: string
+  description:
+    type: string
+  authorization:
+    type: array
+    items:
+      type: string
+  createdAt:
+    type: string
+  createdBy:
+    $ref: ./User.yaml
+  updatedAt:
+    type: string
+  updatedBy:
+    $ref: ./User.yaml

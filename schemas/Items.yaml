@@ -1,0 +1,63 @@
+type: object
+required:
+  - _id
+  - owner
+  - code
+  - name
+  - description
+  - category
+  - unit
+  - stock
+  - price
+  - expired
+  - createdAt
+  - createdBy
+  - updatedAt
+  - updatedBy
+properties:
+  _id:
+    type: string
+  owner:
+    type: object
+    required:
+      - organization
+      - warehouse
+    properties:
+      organization:
+        $ref: ./Organization.yaml
+      warehouse:
+        $ref: ./Entities.yaml
+  code:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  category:
+    type: string
+  unit:
+    type: string
+  stock:
+    type: number
+  price:
+    type: object
+    properties:
+      purchase:
+        type: number
+      sales:
+        type: number
+  expired:
+    type: object
+    properties:
+      closest:
+        type: string
+      furthest:
+        type: string
+  createdAt:
+    type: string
+  createdBy:
+    type: string # TODO: user schema
+  updatedAt:
+    type: string
+  updatedBy:
+    type: string # TODO: user schema

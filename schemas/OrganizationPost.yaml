@@ -1,0 +1,27 @@
+type: object
+required:
+  - name
+  - address
+properties:
+  name:
+    type: string
+  address:
+    type: object
+    required:
+      - street
+      - subdistrict
+      - district
+      - city
+    properties:
+      street:
+        type: string
+      subdistrict:
+        type: string
+      district:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      zipcode:
+        type: string

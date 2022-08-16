@@ -1,0 +1,95 @@
+type: object
+required:
+  - ssn
+  - bpjsNo
+  - name
+  - birth
+  - contact
+  - address
+  - gender
+  - religion
+  - guarantor
+properties:
+  ssn:
+    type: string
+  bpjsNo:
+    type: string
+  name:
+    type: object
+    required:
+      - firstname
+      - middlename
+      - lastname
+    properties:
+      firstname:
+        type: string
+      middlename:
+        type: string
+      lastname:
+        type: string
+  birth:
+    type: object
+    required:
+      - city
+      - date
+    properties:
+      city:
+        type: string
+      date:
+        type: string
+  contact:
+    type: object
+    properties:
+      personal:
+        type: object
+        properties:
+          email:
+            type: string
+          mobile:
+            type: string
+          phone:
+            type: string
+      emergency:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            mobile:
+              type: string
+            phone:
+              type: string
+  address:
+    type: object
+    required:
+      - street
+      - subdistrict
+      - district
+      - city
+    properties:
+      street:
+        type: string
+      subdistrict:
+        type: string
+      district:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      zipcode:
+        type: string
+  gender:
+    type: string
+  blood:
+    type: object
+    properties:
+      type:
+        type: string
+      rhesus:
+        type: string
+  religion:
+    type: string
+  guarantor:
+    type: string

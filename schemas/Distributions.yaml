@@ -1,0 +1,57 @@
+type: object
+required:
+  - _id
+  - item
+  - owner
+  - movement
+  - date
+  - status
+  - createdAt
+  - createdBy
+  - updatedAt
+  - updatedBy
+properties:
+  item:
+    $ref: ./Items.yaml
+  owner:
+    type: object
+    required:
+      - organization
+      - branch
+    properties:
+      organization:
+        $ref: ./Organization.yaml
+      branch:
+        $ref: ./Entities.yaml
+  movement:
+    type: object
+    properties:
+      from:
+        oneOf:
+          - $ref: ./Entities.yaml
+          - $ref: ./Unit.yaml
+      deliveredBy:
+        $ref: ./Employee.yaml
+      receivedBy:
+        $ref: ./Employee.yaml
+      to:
+        oneOf:
+          - $ref: ./Entities.yaml
+          - $ref: ./Unit.yaml
+  date:
+    type: string
+  status:
+    type: object
+    properties:
+      canceled:
+        type: boolean
+      delivered:
+        type: boolean
+  createdAt:
+    type: string
+  createdBy:
+    type: string # TODO: user schema
+  updatedAt:
+    type: string
+  updatedBy:
+    type: string # TODO: user schema

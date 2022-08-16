@@ -1,0 +1,56 @@
+type: object
+required:
+  - mrn
+  - unit
+  - doctor
+  - date
+  - time
+  - queue
+properties:
+  _id:
+    type: string
+  mrn:
+    type: string
+  SEP:
+    type: string
+  unit:
+    type: string
+  doctor:
+    type: string
+  date:
+    type: string
+  time:
+    type: string
+  queue:
+    type: string
+  note:
+    type: string
+  status:
+    type: object
+    properties:
+      visit:
+        type: boolean
+      canceled:
+        type: boolean
+      ready:
+        type: boolean
+      fromAppointment:
+        type: boolean
+      referral:
+        type: boolean
+  registration:
+    type: string
+  appointment:
+    type: string
+  createdAt:
+    type: string
+  createdBy:
+    type: string
+  updatedAt:
+    type: string
+  updatedBy:
+    type: string
+  readyAt:
+    type: string
+  readyBy:
+    type: string

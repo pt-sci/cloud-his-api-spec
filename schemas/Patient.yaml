@@ -1,0 +1,180 @@
+type: object
+required:
+  - _id
+  - parent
+  - ssn
+  - mrn
+  - name
+  - birth
+  - contact
+  - address
+  - gender
+  - blood
+  - religion
+  - guarantor
+  - status
+  - visit
+  - createdAt
+  - createdBy
+  - updatedAt
+  - updatedBy
+properties:
+  _id:
+    type: string
+  parent:
+    type: object
+    required:
+      - organization
+    properties:
+      organization:
+        $ref: ./Organization.yaml
+  ssn:
+    type: string
+  mrn:
+    type: string
+  bpjsNo:
+    type: string
+  name:
+    type: object
+    required:
+      - firstname
+      - middlename
+      - lastname
+    properties:
+      firstname:
+        type: string
+      middlename:
+        type: string
+      lastname:
+        type: string
+  fullname:
+    type: string
+  birth:
+    type: object
+    required:
+      - city
+      - date
+    properties:
+      city:
+        type: string
+      date:
+        type: string
+  contact:
+    type: object
+    required:
+      - personal
+    properties:
+      personal:
+        type: object
+        required:
+          - email
+          - mobile
+          - phone
+        properties:
+          email:
+            type: string
+          mobile:
+            type: string
+          phone:
+            type: string
+      emergency:
+        type: array
+        items:
+          type: object
+          required:
+            - name
+            - mobile
+            - phone
+          properties:
+            name:
+              type: string
+            mobile:
+              type: string
+            phone:
+              type: string
+  address:
+    type: object
+    required:
+      - street
+      - subdistrict
+      - district
+      - city
+    properties:
+      street:
+        type: string
+      subdistrict:
+        type: string
+      district:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      zipcode:
+        type: string
+  gender:
+    type: string
+  blood:
+    type: object
+    required:
+      - type
+      - rhesus
+    properties:
+      type:
+        type: string
+      rhesus:
+        type: string
+  religion:
+    type: string
+  guarantor:
+    type: string
+  status:
+    type: object
+    required:
+      - alive
+      - active
+      - blocklist
+    properties:
+      alive:
+        type: boolean
+      active:
+        type: boolean
+      blocklist:
+        type: boolean
+  visit:
+    type: object
+    required:
+      - total
+      - first
+      - last
+    properties:
+      total:
+        type: integer
+      first:
+        type: object
+        required:
+          - entity
+          - date
+        properties:
+          entity:
+            $ref: ./Entities.yaml
+          date:
+            type: string
+      last:
+        type: object
+        required:
+          - entity
+          - date
+        properties:
+          entity:
+            $ref: ./Entities.yaml
+          date:
+            type: string
+  createdAt:
+    type: string
+  createdBy:
+    type: string # TODO: change to reference user schema
+  updatedAt:
+    type: string
+  updatedBy:
+    type: string

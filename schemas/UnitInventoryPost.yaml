@@ -1,0 +1,23 @@
+type: object
+required:
+  - unit
+  - item
+  - stock
+  - reorder
+properties:
+  unit:
+    type: string
+  item:
+    type: string
+  stock:
+    type: object
+    required:
+      - minimum
+      - maximum
+    properties:
+      minimum:
+        type: number
+      maximum:
+        type: number
+  reorder:
+    type: string

@@ -1,0 +1,38 @@
+type: object
+required:
+  - _id
+  - parent
+  - username
+  - password
+  - roles
+  - employees
+properties:
+  _id:
+    type: string
+  parent:
+    type: object
+    required:
+      - organization
+    properties:
+      organization:
+        type: string
+  username:
+    type: string
+  password:
+    type: string
+  roles:
+    type: array
+    items:
+      $ref: ./Roles.yaml
+  employees:
+    type: array
+    items:
+      $ref: ./Employee.yaml
+  createdAt:
+    type: string
+  createdBy:
+    $ref: ./User.yaml
+  updatedAt:
+    type: string
+  updatedBy:
+    $ref: ./User.yaml

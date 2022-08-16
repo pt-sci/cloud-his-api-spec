@@ -1,0 +1,49 @@
+type: object
+required:
+  - _id
+  - owner
+  - unit
+  - item
+  - stock
+  - reorder
+  - createdAt
+  - createdBy
+  - updatedAt
+  - updatedBy
+properties:
+  _id:
+    type: string
+  owner:
+    type: object
+    required:
+      - organization
+      - branch
+    properties:
+      organization:
+        $ref: ./Organization.yaml
+      warehouse:
+        $ref: ./Entities.yaml
+  unit:
+    type: string
+  item:
+    $ref: ./Items.yaml
+  stock:
+    type: object
+    required:
+      - minimum
+      - maximum
+    properties:
+      minimum:
+        type: number
+      maximum:
+        type: number
+  reorder:
+    type: string
+  createdAt:
+    type: string
+  createdBy:
+    type: string # TODO: user schema
+  updatedAt:
+    type: string
+  updatedBy:
+    type: string # TODO: user schema

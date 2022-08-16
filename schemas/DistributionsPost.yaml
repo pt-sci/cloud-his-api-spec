@@ -1,0 +1,25 @@
+type: object
+required:
+  - item
+  - movement
+  - date
+properties:
+  item:
+    $ref: ./Items.yaml
+  movement:
+    type: object
+    properties:
+      from:
+        oneOf:
+          - $ref: ./Entities.yaml
+          - $ref: ./Unit.yaml
+      deliveredBy:
+        $ref: ./Employee.yaml
+      receivedBy:
+        $ref: ./Employee.yaml
+      to:
+        oneOf:
+          - $ref: ./Entities.yaml
+          - $ref: ./Unit.yaml
+  date:
+    type: string

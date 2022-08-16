@@ -1,0 +1,72 @@
+type: object
+required:
+  - name
+  - kind
+  - address
+  - type
+  - status
+  - property
+properties:
+  name:
+    type: string
+  shortName:
+    type: string
+  kind:
+    type: string
+    enum:
+      - BRANCH
+      - WAREHOUSE
+  address:
+    type: object
+    required:
+      - street
+      - subdistrict
+      - district
+      - city
+    properties:
+      street:
+        type: string
+      subdistrict:
+        type: string
+      district:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      zipcode:
+        type: string
+  type:
+    type: string
+    enum:
+      - HOSPITAL
+      - CLINIC
+      - WAREHOUSE
+  property:
+    type: object
+    oneOf:
+      - type: object
+        required:
+          - serving
+          - storageType
+        properties:
+          serving:
+            type: array
+            items:
+              type: string
+          storageType:
+            type: string
+            enum:
+              - MEDICAL SUPPLY
+              - NON-MEDICAL SUPPLY
+              - RAW FOOD
+              - PROCESSED FOOD
+              - OTHER
+              - ALL
+
+      - type: object
+        required:
+          - isMainBranch
+        properties:
+          isMainBranch:
+            type: boolean

@@ -1,0 +1,31 @@
+type: object
+required:
+  - name
+  - kind
+  - type
+properties:
+  name:
+    type: object
+    required:
+      - first
+      - middle
+      - last
+    properties:
+      first:
+        type: string
+      middle:
+        type: string
+      last:
+        type: string
+  kind:
+    type: string
+    enum:
+      - MEDICAL
+      - NON-MEDICAL
+  type:
+    type: string
+    enum:
+      - VISITING DOCTOR
+      - DOCTOR
+      - NURSE
+      - STAFF
