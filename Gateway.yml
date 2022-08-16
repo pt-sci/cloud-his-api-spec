@@ -22,8 +22,10 @@ tags:
     description: Authenticate user
   - name: organization
     description: Operation about the organization
+  - name: employee
+    description: Operation about employee
   - name: user
-    description: Operations about user
+    description: Operations about user account
 
 paths:
   /login:
@@ -535,6 +537,9 @@ paths:
 
   /employees:
     get:
+      tags:
+        - employee
+      summary: Get all registered employee
       description: Returns list of employee
       parameters:
         - name: org
@@ -566,6 +571,9 @@ paths:
         "401":
           $ref: "./responses/401.yaml"
     post:
+      tags:
+        - employee
+      summary: Register an employee
       description: Register a new employee
       requestBody:
         required: true
@@ -597,6 +605,9 @@ paths:
 
   /employee/{id}:
     get:
+      tags:
+        - employee
+      summary: Get information about the spesific employee
       description: Obtain information about an employee based on its id
       parameters:
         - name: id
@@ -615,8 +626,17 @@ paths:
           $ref: "./responses/400.yaml"
         "401":
           $ref: "./responses/401.yaml"
-    post:
-      description: Register a new employee
+    put:
+      tags:
+        - employee
+      summary: Update employee information
+      description: Update employee information based on the id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -625,7 +645,7 @@ paths:
               $ref: "./schemas/EmployeePost.yaml"
       responses:
         "200":
-          description: Successfully update an employee
+          description: Successfully update employee data
         "400":
           $ref: "./responses/400.yaml"
         "401":
@@ -633,7 +653,10 @@ paths:
 
   /employee/{id}/assign:
     patch:
-      description: Assign employee to entities or units
+      tags:
+        - employee
+      summary: Assign an employee to entities or units
+      description: Assign an employee to entities or units inside the organization
       requestBody:
         required: true
         content:
