@@ -5,7 +5,7 @@ info:
   description: API Gateway for HIS platform
 
 servers:
-  - url: https://167.71.197.93
+  - url: https://cloud-his-server.online
 
 components:
   securitySchemes:
