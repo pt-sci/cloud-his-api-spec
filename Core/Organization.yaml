@@ -162,13 +162,13 @@ paths:
           $ref: "../responses/400.yaml"
         "401":
           $ref: "../responses/401.yaml"
-  /organization/verified/{account_id}:
+  /organization/verified/{account_email}:
     patch:
       tags:
         - organization
       description: Verified owner of organization account
       parameters:
-        - name: account_id
+        - name: account_email
           in: path
           required: true
           schema:
