@@ -1,0 +1,18 @@
+type: object
+required:
+  - has_account
+properties:
+  has_account:
+    type: boolean
+  account_id:
+    type: string
+  account_email:
+    type: string
+  account_verified:
+    type: boolean
+  account_role:
+    type: string
+  registered_at:
+    type: string
+  registered_by:
+    type: string

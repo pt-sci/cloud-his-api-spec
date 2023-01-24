@@ -1,0 +1,200 @@
+openapi: "3.0.2"
+info:
+  title: Cloud-HIS Gateway
+  version: "1.0"
+  description: API Core for HIS platform
+servers:
+  - url: https://cloud-his-core.online
+# components:
+#   securitySchemes:
+#     bearerToken:
+#       type: http
+#       scheme: bearer
+#       bearerFormat: JWT
+# security:
+#   - bearerToken: []
+tags:
+  - name: organization
+    description: Operation about the organization
+paths:
+  /organization:
+    get:
+      tags:
+        - organization
+      description: Get all organization with or without filter
+      parameters:
+        - name: limit
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              nullable: true
+              properties:
+                fieldname:
+                  type: object
+                  nullable: true
+                  properties:
+                    type:
+                      type: string
+                      enum: 
+                        - text
+                        - number
+                        - rangenumber
+                        - date
+                        - daterange
+                    value:
+                      oneOf: 
+                        - type: string
+                        - type: number
+                        - type: array
+      responses:
+        "200":
+          description: Succesfully get all organization
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      count:
+                        type: number
+                      rows:
+                        type: array
+                        items:
+                          $ref: "../schemas/Organization.yaml"
+        "400":
+          $ref: "../responses/400.yaml"
+        "401":
+          $ref: "../responses/401.yaml"
+    post:
+      tags:
+        - organization
+      description: Register an organization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/OrganizationPost.yaml"
+      responses:
+        "201":
+          description: Succesfully register an organization
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "400":
+          $ref: "../responses/400.yaml"
+        "401":
+          $ref: "../responses/401.yaml"
+  /organization/{id}:
+    patch:
+      tags:
+        - organization
+      description: Update an organization data
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/OrganizationPost.yaml"
+      responses:
+        "202":
+          description: Succesfully update an organization data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "400":
+          $ref: "../responses/400.yaml"
+        "401":
+          $ref: "../responses/401.yaml"
+  /organization/send-mail:
+    post:
+      tags:
+        - organization
+      description: Sending an e-mail with link verification account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_email:
+                  type: string
+      responses:
+        "202":
+          description: Succesfully register an organization
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "400":
+          $ref: "../responses/400.yaml"
+        "401":
+          $ref: "../responses/401.yaml"
+  /organization/verified/{account_id}:
+    patch:
+      tags:
+        - organization
+      description: Verified owner of organization account
+      parameters:
+        - name: account_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_verified:
+                  type: boolean
+      responses:
+        "202":
+          description: Succesfully verified an owner of organization account
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "400":
+          $ref: "../responses/400.yaml"
+        "401":
+          $ref: "../responses/401.yaml"
