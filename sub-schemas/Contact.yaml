@@ -1,0 +1,26 @@
+type: array
+items:
+  type: object
+  required:
+    - email
+  properties:
+    name:
+      type: string
+    ssn:
+      type: string
+    relation:
+      type: string
+      enum: 
+        - BAPAK
+        - IBU
+        - ANAK
+        - SAUDARA KANDUNG
+        - SUAMI
+        - ISTRI
+        - KAKEK
+        - NENEK
+        - KERABAT
+    email:
+      type: string
+    phone_number:
+      type: string

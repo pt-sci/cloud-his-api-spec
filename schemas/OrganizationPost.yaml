@@ -1,27 +1,32 @@
 type: object
 required:
   - name
+  - owner_information
+  - subscription_plan
+  - contact_person
   - address
+  - status
+  - registered_at
 properties:
   name:
     type: string
+  about:
+    type: string
+  logo: 
+    type: string
+  subscription_plan:
+    type: string
+  owner_information:
+    $ref: '../sub-schemas/account.yaml'
+  contact_person:
+    $ref: '../sub-schemas/contact.yaml'
   address:
-    type: object
-    required:
-      - street
-      - subdistrict
-      - district
-      - city
-    properties:
-      street:
-        type: string
-      subdistrict:
-        type: string
-      district:
-        type: string
-      city:
-        type: string
-      province:
-        type: string
-      zipcode:
-        type: string
+    $ref: '../sub-schemas/address.yaml'
+  status:
+    type: string
+    enum: 
+      - AKTIF
+      - DITANGGUHKAN
+  registered_at:
+    type: string
+  
