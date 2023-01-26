@@ -136,7 +136,7 @@ paths:
           $ref: "../responses/400.yaml"
         "401":
           $ref: "../responses/401.yaml"
-  /organization/send-mail:
+  /organization/send-activation-link:
     post:
       tags:
         - organization
@@ -164,11 +164,11 @@ paths:
           $ref: "../responses/400.yaml"
         "401":
           $ref: "../responses/401.yaml"
-  /organization/verified/{account_email}:
+  /organization/activate/{account_email}:
     patch:
       tags:
         - organization
-      description: Verified owner of organization account
+      description: Activate owner of organization account
       parameters:
         - name: account_email
           in: path
@@ -182,11 +182,11 @@ paths:
             schema:
               type: object
               properties:
-                account_verified:
+                account_activate:
                   type: boolean
       responses:
         "202":
-          description: Succesfully verified an owner of organization account
+          description: Succesfully activate an owner of organization account
           content:
             application/json:
               schema:
