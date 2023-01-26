@@ -17,7 +17,7 @@ tags:
   - name: organization
     description: Operation about the organization
 paths:
-  /organization:
+  /organizations:
     get:
       tags:
         - organization
