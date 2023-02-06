@@ -1,14 +1,6 @@
 type: object
 properties:
-  account_id:
-    type: string
   account_email:
     type: string
-  account_verified:
-    type: boolean
-  account_role:
-    type: string
-  registered_at:
-    type: string
-  registered_by:
+  account_password:
     type: string

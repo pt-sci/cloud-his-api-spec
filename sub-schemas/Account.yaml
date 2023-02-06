@@ -8,7 +8,9 @@ properties:
     type: string
   account_email:
     type: string
-  account_verified:
+  account_password:
+    type: string
+  account_activate:
     type: boolean
   account_role:
     type: string
