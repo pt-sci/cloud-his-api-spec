@@ -1,0 +1,15 @@
+type: object
+required:
+  - first
+  - last
+properties:
+  prefix: 
+    type: string
+  first:
+    type: string
+  middle:
+    type: string
+  last:
+    type: string
+  suffix:
+    type: string

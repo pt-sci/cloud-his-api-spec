@@ -1,0 +1,10 @@
+description: FORBIDDEN
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        statusCode:
+          type: number
+        message:
+          type: string

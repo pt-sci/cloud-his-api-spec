@@ -4,7 +4,7 @@ info:
   version: "1.0"
   description: API Core for HIS platform
 servers:
-  - url: https://cloud-his-core.online
+  - url: https://cloud-his-core-production.up.railway.app/
 # components:
 #   securitySchemes:
 #     bearerToken:
@@ -28,36 +28,36 @@ paths:
           required: true
           schema:
             type: integer
-        - name: offset
+        - name: skip
           in: query
           required: true
           schema:
             type: integer
       requestBody:
-        required: false
+        required: true
         content:
           application/json:
             schema:
-              type: object
-              nullable: true
-              properties:
-                fieldname:
-                  type: object
-                  nullable: true
-                  properties:
-                    type:
-                      type: string
-                      enum: 
-                        - text
-                        - number
-                        - rangenumber
-                        - date
-                        - daterange
-                    value:
-                      oneOf: 
-                        - type: string
-                        - type: number
-                        - type: array
+              type: array
+              items:
+                nullable: true
+                type: object
+                properties:
+                  fieldname:
+                    type: string
+                  type:
+                    type: string
+                    enum: 
+                      - text
+                      - number
+                      - rangenumber
+                      - date
+                      - daterange
+                  value:
+                    oneOf: 
+                      - type: string
+                      - type: number
+                      - type: array
       responses:
         "200":
           description: Succesfully get all organization
@@ -66,6 +66,10 @@ paths:
               schema:
                 type: object
                 properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
                   data:
                     type: object
                     properties:
@@ -75,10 +79,13 @@ paths:
                         type: array
                         items:
                           $ref: "../schemas/Organization.yaml"
-        "400":
-          $ref: "../responses/400.yaml"
         "401":
           $ref: "../responses/401.yaml"
+        "403":
+          $ref: "../responses/403.yaml"
+        "500":
+          $ref: "../responses/500.yaml"
+  /organization:
     post:
       tags:
         - organization
@@ -91,19 +98,44 @@ paths:
               $ref: "../schemas/OrganizationPost.yaml"
       responses:
         "201":
-          description: Succesfully register an organization
+          $ref: "../responses/201.yaml"
+        "401":
+          $ref: "../responses/401.yaml"
+        "403":
+          $ref: "../responses/403.yaml"
+        "500":
+          $ref: "../responses/500.yaml"
+  /organization/{id}:
+    get:
+      tags:
+        - organization
+      description: Get an organization by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully get an organization
           content:
             application/json:
               schema:
                 type: object
                 properties:
+                  statusCode:
+                    type: number
                   message:
                     type: string
-        "400":
-          $ref: "../responses/400.yaml"
+                  data:
+                    $ref: "../schemas/Organization.yaml"
         "401":
           $ref: "../responses/401.yaml"
-  /organization/{id}:
+        "403":
+          $ref: "../responses/403.yaml"
+        "500":
+          $ref: "../responses/500.yaml"
     patch:
       tags:
         - organization
@@ -122,18 +154,13 @@ paths:
               $ref: "../schemas/OrganizationPost.yaml"
       responses:
         "202":
-          description: Succesfully update an organization data
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-        "400":
-          $ref: "../responses/400.yaml"
+          $ref: "../responses/202.yaml"
         "401":
           $ref: "../responses/401.yaml"
+        "403":
+          $ref: "../responses/403.yaml"
+        "500":
+          $ref: "../responses/500.yaml"
   /organization/send-activation-link:
     post:
       tags:
@@ -149,19 +176,23 @@ paths:
                 account_email:
                   type: string
       responses:
-        "202":
-          description: Succesfully register an organization
+        "200":
+          description: "Successfully send an email for activate account"
           content:
             application/json:
               schema:
                 type: object
                 properties:
+                  statusCode:
+                    type: number
                   message:
                     type: string
-        "400":
-          $ref: "../responses/400.yaml"
         "401":
           $ref: "../responses/401.yaml"
+        "403":
+          $ref: "../responses/403.yaml"
+        "500":
+          $ref: "../responses/500.yaml"
   /organization/activate/{account_email}:
     patch:
       tags:
@@ -184,17 +215,12 @@ paths:
                   type: boolean
       responses:
         "202":
-          description: Succesfully activate an owner of organization account
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-        "400":
-          $ref: "../responses/400.yaml"
+          $ref: "../responses/202.yaml"
         "401":
           $ref: "../responses/401.yaml"
+        "403":
+          $ref: "../responses/403.yaml"
+        "500":
+          $ref: "../responses/500.yaml"
 
   

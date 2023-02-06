@@ -1,35 +1,21 @@
 type: object
 required:
   - _id
+  - organization
   - name
-  - kind
+  - account
   - type
-  - parent
   - createdAt
   - createdBy
-  - updatedAt
-  - updatedBy
 properties:
   _id:
     type: string
+  organization:
+    type: string
   name:
     type: object
-    required:
-      - first
-      - middle
-      - last
     properties:
-      first:
-        type: string
-      middle:
-        type: string
-      last:
-        type: string
-  kind:
-    type: string
-    enum:
-      - MEDICAL
-      - NON-MEDICAL
+      $ref: "../sub-schemas/PersonName.yaml"
   type:
     type: string
     enum:
@@ -37,24 +23,11 @@ properties:
       - DOCTOR
       - NURSE
       - STAFF
-  parent:
-    type: object
-    required:
-      - organization
-      - entities
-      - units
-    properties:
-      organization:
-        type: string
-      entities:
-        $ref: ./Entities.yaml
-      units:
-        $ref: ./Unit.yaml
   createdAt:
     type: string
   createdBy:
-    type: string # TODO: user schema
+    type: string
   updatedAt:
     type: string
   updatedBy:
-    type: string # TODO: user schema
+    type: string

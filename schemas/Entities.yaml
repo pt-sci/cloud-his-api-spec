@@ -1,105 +1,47 @@
 type: object
 required:
   - _id
+  - organization
   - name
-  - kind
-  - address
   - type
-  - parent
   - status
-  - property
-  - createdAt
-  - createdBy
-  - updatedAt
-  - updatedBy
+  - is_address_same_as_org
+  - address
+  - created_at
+  - created_by
 properties:
   _id:
     type: string
+  organization:
+    type: string
   name:
+    $ref: "../sub-schemas/PersonName.yaml"
+  about:
     type: string
-  shortName:
-    type: string
-  kind:
-    type: string
-    enum:
-      - BRANCH
-      - WAREHOUSE
-  address:
-    type: object
-    required:
-      - isSameAsOrg
-      - street
-      - subdistrict
-      - district
-      - city
-    properties:
-      isSameAsOrg:
-        type: boolean
-      street:
-        type: string
-      subdistrict:
-        type: string
-      district:
-        type: string
-      city:
-        type: string
-      province:
-        type: string
-      zipcode:
-        type: string
   type:
     type: string
-    enum:
-      - HOSPITAL
-      - CLINIC
-      - WAREHOUSE
-  parent:
-    type: object
-    properties:
-      organization:
-        $ref: ./Organization.yaml
+    enum: 
+      - GUDANG
+      - MEDIS
   status:
-    type: object
-    properties:
-      open:
-        type: boolean
-  unitCount:
-    type: number
-  employeeCount:
-    type: number
-  property:
-    type: object
-    oneOf:
-      - type: object
-        required:
-          - serving
-          - storageType
-        properties:
-          serving:
-            type: array
-            items:
-              type: string
-          storageType:
-            type: string
-            enum:
-              - MEDICAL SUPPLY
-              - NON-MEDICAL SUPPLY
-              - RAW FOOD
-              - PROCESSED FOOD
-              - OTHER
-              - ALL
-
-      - type: object
-        required:
-          - isMainBranch
-        properties:
-          isMainBranch:
-            type: boolean
-  createdAt:
     type: string
-  createdBy:
+    enum:
+      - BUKA
+      - TUTUP
+      - PEMELIHARAAN
+  is_address_same_as_org:
+    type: boolean
+  address:
+    $ref: "../sub-schemas/Address.yaml"
+  warehouse:
+    $ref: '../sub-schemas/EntityWarehouse.yaml'
+  medical:
+    $ref: '../sub-schemas/EntityMedical.yaml'
+  created_at:
+    type: string
+  created_by:
     type: string # TODO: user schema
-  updatedAt:
+  updated_at:
     type: string
-  updatedBy:
+  updated_by:
     type: string # TODO: user schema
