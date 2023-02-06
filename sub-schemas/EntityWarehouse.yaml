@@ -1,0 +1,13 @@
+type: object
+required: 
+  - storage_type
+properties:
+  storage_type:
+    type: string
+    enum:
+      - PASOKAN MEDIS
+      - PASOKAN NON-MEDIS
+      - MAKANAN MENTAH
+      - MAKANAN OLAHAN
+      - LAINNYA
+      - SEMUA

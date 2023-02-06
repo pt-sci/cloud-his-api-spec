@@ -1,0 +1,6 @@
+type: object
+required:
+  - is_main_branch
+properties:
+  is_main_branch:
+    type: boolean

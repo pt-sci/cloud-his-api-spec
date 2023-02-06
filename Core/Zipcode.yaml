@@ -1,0 +1,87 @@
+openapi: "3.0.2"
+info:
+  title: Cloud-HIS Core
+  version: "1.0"
+  description: API Core for HIS platform
+servers:
+  - url: https://cloud-his-core-production.up.railway.app/
+# components:
+#   securitySchemes:
+#     bearerToken:
+#       type: http
+#       scheme: bearer
+#       bearerFormat: JWT
+# security:
+#   - bearerToken: []
+tags:
+  - name: zipcode
+    description: Operation about the zipcode
+paths:
+  /zipcodes:
+    get:
+      tags:
+        - zipcode
+      description: Get all zipcode with or without filter
+      parameters:
+        - name: limit
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: skip
+          in: query
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                nullable: true
+                type: object
+                properties:
+                  fieldname:
+                    type: string
+                  type:
+                    type: string
+                    enum: 
+                      - text
+                      - number
+                      - rangenumber
+                      - date
+                      - daterange
+                  value:
+                    oneOf: 
+                      - type: string
+                      - type: number
+                      - type: array
+      responses:
+        "200":
+          description: Succesfully get all organization
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      count:
+                        type: number
+                      rows:
+                        type: array
+                        items:
+                          $ref: "../schemas/Zipcode.yaml"
+        "401":
+          $ref: "../responses/401.yaml"
+        "403":
+          $ref: "../responses/403.yaml"
+        "500":
+          $ref: "../responses/500.yaml"

@@ -1,0 +1,15 @@
+type: object
+properties:
+  _id:
+    type: string
+  Zipcode:
+    type: string
+  District:
+    type: string
+  County:
+    type: string
+  City:
+    type: string
+  Province:
+    type: string
+  

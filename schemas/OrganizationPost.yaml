@@ -2,7 +2,6 @@ type: object
 required:
   - name
   - owner_information
-  - subscription_plan
   - contact_person
   - address
   - status
@@ -18,9 +17,4 @@ properties:
     $ref: '../sub-schemas/Contact.yaml'
   address:
     $ref: '../sub-schemas/Address.yaml'
-  status:
-    type: string
-    enum: 
-      - AKTIF
-      - DITANGGUHKAN
   
