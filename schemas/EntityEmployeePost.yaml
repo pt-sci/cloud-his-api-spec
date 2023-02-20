@@ -1,0 +1,11 @@
+type: object
+required:
+  - entity
+  - employees
+properties:
+  entity:
+    type: string
+  employees:
+    type: array
+    items:
+      type: string

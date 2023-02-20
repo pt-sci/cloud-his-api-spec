@@ -1,0 +1,58 @@
+get:
+  tags:
+    - employee
+  description: Get all entity with or without filter
+  parameters:
+    - name: limit
+      in: query
+      required: true
+      schema:
+        type: integer
+    - name: skip
+      in: query
+      required: true
+      schema:
+        type: integer
+    - name: q
+      in: query
+      schema:
+        type: string
+      examples:
+        p:
+          summary: an example for search query
+          value: p=solusi cipta integrasi
+    - name: s
+      in: query
+      schema:
+        type: string
+      examples:
+        s:
+          summary: an example for filter query
+          value: s=name=text=solusi cipta integrasi
+  responses:
+    "200":
+      description: Succesfully get all employees
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: object
+                properties:
+                  count:
+                    type: number
+                  rows:
+                    type: array
+                    items:
+                      $ref: "../../schemas/Employee.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

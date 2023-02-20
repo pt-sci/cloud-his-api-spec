@@ -1,0 +1,52 @@
+openapi: "3.0.2"
+info:
+  title: Cloud HIS Gateway
+  version: "1.0"
+  description: API Gateway for HIS platform
+
+servers:
+  - url: https://cloud-his-gateway-production.up.railway.app/
+
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerToken: []
+
+tags:
+  - name: auth
+    description: Operation about authentication
+  - name: employee
+    description: Operation about employee
+  - name: organization
+    description: Operation about the organization
+  - name: zipcode
+    description: Operation about the zipcode
+
+paths:
+  /auth/check-role-entity/{id}:
+    $ref: './Gateway/Auth/auth-check-role-entity.yaml'
+  /employees:
+    $ref: './Gateway/Employees/employees.yaml'
+  /employee:
+    $ref: './Gateway/Employees/employee.yaml'
+  /employee/{id}:
+    $ref: './Gateway/Employees/employee-id.yaml'
+  /employee/assign-employee:
+    $ref: './Gateway/Employees/employee-assign-employee.yaml'
+  /organizations:
+    $ref: './Gateway/Organizations/organizations.yaml'
+  /organization:
+    $ref: './Gateway/Organizations/organization.yaml'
+  /organization/{id}:
+    $ref: './Gateway/Organizations/organization-id.yaml'
+  /organization/send-activation-link:
+    $ref: './Gateway/Organizations/organization-send-activation-link.yaml'
+  /organization/activate/{account_email}:
+    $ref: './Gateway/Organizations/organization-activate-account-email.yaml'
+  /zipcodes:
+    $ref: './Gateway/Zipcodes/zipcodes.yaml'

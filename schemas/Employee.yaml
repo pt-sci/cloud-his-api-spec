@@ -3,8 +3,8 @@ required:
   - _id
   - organization
   - name
+  - position
   - account
-  - type
   - createdAt
   - createdBy
 properties:
@@ -13,21 +13,21 @@ properties:
   organization:
     type: string
   name:
-    type: object
-    properties:
-      $ref: "../sub-schemas/PersonName.yaml"
-  type:
+    $ref: "../sub-schemas/PersonName.yaml"
+  position:
     type: string
     enum:
       - VISITING DOCTOR
       - DOCTOR
       - NURSE
       - STAFF
-  createdAt:
+  account:
+    $ref: '../sub-schemas/Account.yaml'
+  created_at:
     type: string
-  createdBy:
+  created_by:
     type: string
-  updatedAt:
+  updated_at:
     type: string
-  updatedBy:
+  updated_by:
     type: string

@@ -1,0 +1,14 @@
+type: object
+required:
+  - _id
+  - entity
+  - employees
+properties:
+  _id:
+    type: string
+  entity:
+    type: string
+  employees:
+    type: array
+    items:
+      type: string
