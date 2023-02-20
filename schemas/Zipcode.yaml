@@ -2,14 +2,14 @@ type: object
 properties:
   _id:
     type: string
-  Zipcode:
+  zipcode:
     type: string
-  District:
+  district:
     type: string
-  County:
+  sub_district:
     type: string
-  City:
+  city:
     type: string
-  Province:
+  province:
     type: string
   

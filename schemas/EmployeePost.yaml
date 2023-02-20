@@ -1,31 +1,21 @@
 type: object
 required:
   - name
-  - kind
-  - type
+  - position
+  - account
 properties:
   name:
-    type: object
-    required:
-      - first
-      - middle
-      - last
-    properties:
-      first:
-        type: string
-      middle:
-        type: string
-      last:
-        type: string
-  kind:
-    type: string
-    enum:
-      - MEDICAL
-      - NON-MEDICAL
-  type:
+    $ref: '../sub-schemas/PersonName.yaml'
+  position:
     type: string
     enum:
       - VISITING DOCTOR
       - DOCTOR
       - NURSE
       - STAFF
+  account:
+    $ref: '../sub-schemas/AccountPost.yaml'
+  created_at:
+    type: string
+  created_by:
+    type: string
