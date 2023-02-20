@@ -1,7 +1,7 @@
-get:
+patch:
   tags:
-    - organization
-  description: Activate owner of organization account
+    - employee
+  description: Disable account employee
   parameters:
     - name: account_email
       in: path
@@ -13,10 +13,7 @@ get:
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            account_activate:
-              type: boolean
+          $ref: "../../schemas/Employee.yaml"
   responses:
     "200":
       $ref: "../../responses/200.yaml"

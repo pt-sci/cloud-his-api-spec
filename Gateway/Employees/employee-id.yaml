@@ -15,8 +15,8 @@ patch:
         schema:
           $ref: "../../schemas/Employee.yaml"
   responses:
-    "202":
-      $ref: "../../responses/202.yaml"
+    "200":
+      $ref: "../../responses/200.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":

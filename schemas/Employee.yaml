@@ -23,6 +23,11 @@ properties:
       - STAFF
   account:
     $ref: '../sub-schemas/Account.yaml'
+  status:
+    type: string
+    enum:
+      - ACTIVE
+      - DEACTIVE
   created_at:
     type: string
   created_by:
