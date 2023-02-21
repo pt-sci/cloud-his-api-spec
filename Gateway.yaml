@@ -38,6 +38,12 @@ paths:
     $ref: './Gateway/Employees/employee-id.yaml'
   /employee/assign-employee:
     $ref: './Gateway/Employees/employee-assign-employee.yaml'
+  /employee/send-confirmation-email:
+    $ref: './Gateway/Employees/employee-send-confirmation-email.yaml'
+  /employee/deactive/{id}:
+    $ref: './Gateway/Employees/employee-deactive-id.yaml'
+  /employee/disable-account/{account_email}:
+    $ref: './Gateway/Employees/employee-disable-account-account-email.yaml'
   /organizations:
     $ref: './Gateway/Organizations/organizations.yaml'
   /organization:
