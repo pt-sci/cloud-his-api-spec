@@ -18,6 +18,8 @@ security:
   - bearerToken: []
 
 tags:
+  - name: auth
+    description: Operation about authentication
   - name: employee
     description: Operation about employee
   - name: entity
@@ -28,22 +30,26 @@ tags:
     description: Operation about the zipcode
 
 paths:
+  /auth/send-reset-password:
+    $ref: './Core/Auth/auth-send-reset-password.yaml'
   /employees:
     $ref: './Core/Employees/employees.yaml'
   /employee:
     $ref: './Core/Employees/employee.yaml'
   /employee/{id}:
     $ref: './Core/Employees/employee-id.yaml'
+  /employee/{email}:
+    $ref: './Core/Employees/employee-email.yaml'
   /employee/entity-of/{id}:
     $ref: './Core/Employees/employee-entity-of-id.yaml'
   /employee/assign-employee:
     $ref: './Core/Employees/employee-assign-employee.yaml'
   /employee/send-confirmation-email:
     $ref: './Core/Employees/employee-send-confirmation-email.yaml'
-  /employee/deactive/{id}:
-    $ref: './Core/Employees/employee-deactive-id.yaml'
-  /employee/disable-account/{account_email}:
-    $ref: './Core/Employees/employee-disable-account-account-email.yaml'
+  /employee/change-status/{id}:
+    $ref: './Core/Employees/employee-change-status-id.yaml'
+  /employee/change-status-account/{id}:
+    $ref: './Core/Employees/employee-change-status-account-id.yaml'
   /entities:
     $ref: './Core/Entities/entities.yaml'
   /entity/{id}:

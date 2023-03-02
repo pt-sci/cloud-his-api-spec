@@ -20,7 +20,7 @@ get:
       examples:
         p:
           summary: an example for search query
-          value: p=solusi cipta integrasi
+          value: solusi cipta integrasi
     - name: s
       in: query
       schema:
@@ -28,7 +28,7 @@ get:
       examples:
         s:
           summary: an example for filter query
-          value: s=name=text=solusi cipta integrasi
+          value: name=text=solusi cipta integrasi
   responses:
     "200":
       description: Succesfully get all employees
