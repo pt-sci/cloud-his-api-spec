@@ -22,12 +22,12 @@ properties:
       - NURSE
       - STAFF
   account:
-    $ref: '../sub-schemas/Account.yaml'
+    $ref: '../sub-schemas/AccountResponse.yaml'
   status:
     type: string
     enum:
-      - ACTIVE
-      - DEACTIVE
+      - AKTIF
+      - NON-AKTIF
   created_at:
     type: string
   created_by:

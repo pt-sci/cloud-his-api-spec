@@ -14,7 +14,7 @@ properties:
       - NURSE
       - STAFF
   account:
-    $ref: '../sub-schemas/AccountPost.yaml'
+    $ref: '../sub-schemas/Account.yaml'
   created_at:
     type: string
   created_by:

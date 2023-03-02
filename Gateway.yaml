@@ -30,6 +30,10 @@ tags:
 paths:
   /auth/check-role-entity/{id}:
     $ref: './Gateway/Auth/auth-check-role-entity.yaml'
+  /auth/send-reset-password:
+    $ref: './Gateway/Auth/auth-send-reset-password.yaml'
+  /auth/reset-password:
+    $ref: './Gateway/Auth/auth-reset-password.yaml'
   /employees:
     $ref: './Gateway/Employees/employees.yaml'
   /employee:
@@ -40,10 +44,12 @@ paths:
     $ref: './Gateway/Employees/employee-assign-employee.yaml'
   /employee/send-confirmation-email:
     $ref: './Gateway/Employees/employee-send-confirmation-email.yaml'
-  /employee/deactive/{id}:
-    $ref: './Gateway/Employees/employee-deactive-id.yaml'
-  /employee/disable-account/{account_email}:
-    $ref: './Gateway/Employees/employee-disable-account-account-email.yaml'
+  /employee/change-status/{id}:
+    $ref: './Gateway/Employees/employee-change-status-id.yaml'
+  /employee/change-status-account/{id}:
+    $ref: './Gateway/Employees/employee-change-status-account-id.yaml'
+  /employee/create-password:
+    $ref: './Gateway/Employees/employee-create-password.yaml'
   /organizations:
     $ref: './Gateway/Organizations/organizations.yaml'
   /organization:

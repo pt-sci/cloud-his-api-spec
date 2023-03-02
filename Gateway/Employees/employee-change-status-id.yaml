@@ -1,20 +1,19 @@
 patch:
   tags:
     - employee
-  description: Assign an employee to entity
+  description: Change status employee
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          type: object
-          properties:
-            employee:
-              type: string
-            entities:
-              type: array
-              items:
-                type: string
+          $ref: "../../schemas/Employee.yaml"
   responses:
     "200":
       $ref: "../../responses/200.yaml"

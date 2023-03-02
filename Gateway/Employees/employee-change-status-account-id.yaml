@@ -1,7 +1,7 @@
 patch:
   tags:
     - employee
-  description: Deactivate employee
+  description: Change status account employee
   parameters:
     - name: id
       in: path

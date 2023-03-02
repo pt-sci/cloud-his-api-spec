@@ -4,3 +4,5 @@ properties:
     type: string
   account_password:
     type: string
+  account_role:
+    type: string

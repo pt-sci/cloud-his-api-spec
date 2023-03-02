@@ -1,9 +1,9 @@
 patch:
   tags:
     - employee
-  description: Disable account employee
+  description: Change status account employee
   parameters:
-    - name: account_email
+    - name: id
       in: path
       required: true
       schema:

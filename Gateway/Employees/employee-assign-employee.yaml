@@ -7,21 +7,17 @@ patch:
     content:
       application/json:
         schema:
-          $ref: '../../schemas/EntityEmployeePost.yaml'
+          type: object
+          properties:
+            employee:
+              type: string
+            entities:
+              type: array
+              items:
+                type: string
   responses:
     "200":
-      description: Successfully assign employee to entity
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              statusCode:
-                type: number
-              message:
-                type: string
-              data:
-                $ref: "../../schemas/EntityEmployee.yaml"
+      $ref: "../../responses/200.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":
