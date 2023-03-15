@@ -1,30 +1,16 @@
 get:
   tags:
-    - zipcode
-  description: Get all zipcode with or without filter
+    - entity
+  description: Find entities by employee id
   parameters:
-    - name: limit
-      in: query
+    - name: id
+      in: path
       required: true
-      schema:
-        type: integer
-    - name: skip
-      in: query
-      required: true
-      schema:
-        type: integer
-    - name: s
-      description: fieldname=type=value
-      in: query
       schema:
         type: string
-      examples:
-        s:
-          summary: an example for filter query
-          value: name=text=solusi cipta integrasi;about=text=perusahaan
   responses:
     "200":
-      description: Succesfully get all organization
+      description: Successfully get entities by employee id
       content:
         application/json:
           schema:
@@ -42,7 +28,7 @@ get:
                   rows:
                     type: array
                     items:
-                      $ref: "../../schemas/Zipcode.yaml"
+                      $ref: "../../schemas/EntitiesGateway.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":

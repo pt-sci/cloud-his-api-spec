@@ -38,8 +38,8 @@ paths:
     $ref: './Core/Employees/employee.yaml'
   /employee/{id}:
     $ref: './Core/Employees/employee-id.yaml'
-  /employee/{email}:
-    $ref: './Core/Employees/employee-email.yaml'
+  /employee/find-by-email/{email}:
+    $ref: './Core/Employees/employee-find-by-email-email.yaml'
   /employee/entity-of/{id}:
     $ref: './Core/Employees/employee-entity-of-id.yaml'
   /employee/assign-employee:
@@ -52,8 +52,14 @@ paths:
     $ref: './Core/Employees/employee-change-status-account-id.yaml'
   /entities:
     $ref: './Core/Entities/entities.yaml'
+  /entity:
+    $ref: './Core/Entities/entity.yaml'
+  /entities/find-by-employee/{id}:
+    $ref: './Core/Entities/entities-find-by-employee-id.yaml'
   /entity/{id}:
     $ref: './Core/Entities/entity-id.yaml'
+  /entity/change-status/{id}:
+    $ref: './Core/Entities/entity-change-status-id.yaml'
   /organizations:
     $ref: './Core/Organizations/organizations.yaml'
   /organization:

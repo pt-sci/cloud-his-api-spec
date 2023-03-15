@@ -22,6 +22,8 @@ tags:
     description: Operation about authentication
   - name: employee
     description: Operation about employee
+  - name: entity
+    description: Operation about entity
   - name: organization
     description: Operation about the organization
   - name: zipcode
@@ -48,8 +50,24 @@ paths:
     $ref: './Gateway/Employees/employee-change-status-id.yaml'
   /employee/change-status-account/{id}:
     $ref: './Gateway/Employees/employee-change-status-account-id.yaml'
+  /employee/create-account:
+    $ref: './Gateway/Employees/employee-create-account.yaml'
   /employee/create-password:
     $ref: './Gateway/Employees/employee-create-password.yaml'
+  /entities:
+    $ref: './Gateway/Entities/entities.yaml'
+  /entities/find-by-employee/{id}:
+    $ref: './Gateway/Entities/entities-find-by-employee-id.yaml'
+  /entity:
+    $ref: './Gateway/Entities/entity.yaml'
+  /entity/{id}:
+    $ref: './Gateway/Entities/entity-id.yaml'
+  /entity/change-status/{id}:
+    $ref: './Gateway/Entities/entity-change-status-id.yaml'
+  /entity/upload-logo/{id}:
+    $ref: './Gateway/Entities/entity-upload-logo-id.yaml'
+  /entity/upload-banner/{id}:
+    $ref: './Gateway/Entities/entity-upload-logo-id.yaml'
   /organizations:
     $ref: './Gateway/Organizations/organizations.yaml'
   /organization:

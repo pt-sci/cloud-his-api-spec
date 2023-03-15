@@ -8,12 +8,6 @@ patch:
       required: true
       schema:
         type: string
-  requestBody:
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: "../../schemas/Employee.yaml"
   responses:
     "200":
       $ref: "../../responses/200.yaml"

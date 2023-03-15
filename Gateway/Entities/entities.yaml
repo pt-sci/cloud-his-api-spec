@@ -1,7 +1,7 @@
 get:
   tags:
-    - zipcode
-  description: Get all zipcode with or without filter
+    - entity
+  description: Get all entity with or without filter
   parameters:
     - name: limit
       in: query
@@ -13,6 +13,14 @@ get:
       required: true
       schema:
         type: integer
+    - name: q
+      in: query
+      schema:
+        type: string
+      examples:
+        q:
+          summary: an example for search query
+          value: solusi cipta integrasi
     - name: s
       description: fieldname=type=value
       in: query
@@ -24,7 +32,7 @@ get:
           value: name=text=solusi cipta integrasi;about=text=perusahaan
   responses:
     "200":
-      description: Succesfully get all organization
+      description: Succesfully get all entity
       content:
         application/json:
           schema:
@@ -42,7 +50,7 @@ get:
                   rows:
                     type: array
                     items:
-                      $ref: "../../schemas/Zipcode.yaml"
+                      $ref: "../../schemas/EntitiesGateway.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":
