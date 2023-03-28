@@ -1,0 +1,22 @@
+type: object
+required: 
+  - _id
+  - name
+  - type
+  - value
+properties:
+  _id:
+    type: string
+  name:
+    type: string
+  type:
+    type: string
+    enum:
+      - FORM_REGIS_PASIEN
+  value:
+    type: object
+    properties:
+      required:
+        type: array
+        items:
+          type: string

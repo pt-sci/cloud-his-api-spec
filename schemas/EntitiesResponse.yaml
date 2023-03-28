@@ -45,6 +45,16 @@ properties:
     $ref: '../sub-schemas/EntityMedical.yaml'
   entityemployees:
     $ref: '../schemas/EntityEmployee.yaml'
+  using_template:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: ['FORM_REGIS_PASIEN']
+        template_id:
+          type: string
   created_at:
     type: string
   created_by:
