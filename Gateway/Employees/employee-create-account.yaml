@@ -1,13 +1,16 @@
-patch:
+put:
   tags:
     - employee
-  description: Change status account employee
-  parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: string
+  description: Create account for employee
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            account_role:
+              type: string
   responses:
     "200":
       $ref: "../../responses/200.yaml"

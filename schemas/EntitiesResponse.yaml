@@ -1,0 +1,55 @@
+type: object
+required:
+  - _id
+  - organization
+  - name
+  - type
+  - status
+  - is_address_same_as_org
+  - address
+  - created_at
+  - created_by
+properties:
+  _id:
+    type: string
+  organization:
+    type: string
+  name:
+    type: string
+  about:
+    type: string
+  type:
+    type: string
+    enum: 
+      - GUDANG
+      - MEDIS
+  status:
+    type: string
+    enum:
+      - BUKA
+      - TUTUP
+      - PEMELIHARAAN
+  logo:
+    type: string
+  banner:
+    type: string
+  color:
+    type: string
+  is_address_same_as_org:
+    type: boolean
+  address:
+    $ref: "../sub-schemas/Address.yaml"
+  warehouse:
+    $ref: '../sub-schemas/EntityWarehouse.yaml'
+  medical:
+    $ref: '../sub-schemas/EntityMedical.yaml'
+  entityemployees:
+    $ref: '../schemas/EntityEmployee.yaml'
+  created_at:
+    type: string
+  created_by:
+    type: string # TODO: user schema
+  updated_at:
+    type: string
+  updated_by:
+    type: string # TODO: user schema

@@ -1,13 +1,21 @@
 patch:
   tags:
-    - employee
-  description: Change status account employee
+    - entity
+  description: Upload an image for entity logo
   parameters:
     - name: id
       in: path
       required: true
       schema:
         type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            file:
+              type: string
   responses:
     "200":
       $ref: "../../responses/200.yaml"

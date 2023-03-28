@@ -28,7 +28,7 @@ get:
       examples:
         s:
           summary: an example for filter query
-          value: name=text=solusi cipta integrasi
+          value: name=text=solusi cipta integrasi;about=text=perusahaan
   responses:
     "200":
       description: Succesfully get all employees

@@ -1,72 +1,49 @@
 type: object
 required:
+  - organization
   - name
-  - kind
-  - address
   - type
   - status
-  - property
+  - is_address_same_as_org
+  - address
+  - created_at
+  - created_by
 properties:
+  organization:
+    type: string
   name:
     type: string
-  shortName:
+  about:
     type: string
-  kind:
-    type: string
-    enum:
-      - BRANCH
-      - WAREHOUSE
-  address:
-    type: object
-    required:
-      - street
-      - subdistrict
-      - district
-      - city
-    properties:
-      street:
-        type: string
-      subdistrict:
-        type: string
-      district:
-        type: string
-      city:
-        type: string
-      province:
-        type: string
-      zipcode:
-        type: string
   type:
     type: string
+    enum: 
+      - GUDANG
+      - MEDIS
+  status:
+    type: string
     enum:
-      - HOSPITAL
-      - CLINIC
-      - WAREHOUSE
-  property:
-    type: object
-    oneOf:
-      - type: object
-        required:
-          - serving
-          - storageType
-        properties:
-          serving:
-            type: array
-            items:
-              type: string
-          storageType:
-            type: string
-            enum:
-              - MEDICAL SUPPLY
-              - NON-MEDICAL SUPPLY
-              - RAW FOOD
-              - PROCESSED FOOD
-              - OTHER
-              - ALL
-
-      - type: object
-        required:
-          - isMainBranch
-        properties:
-          isMainBranch:
-            type: boolean
+      - BUKA
+      - TUTUP
+      - PEMELIHARAAN
+  images:
+    type: array
+    items:
+      type: string
+      format: binary
+  is_address_same_as_org:
+    type: boolean
+  address:
+    $ref: "../sub-schemas/Address.yaml"
+  warehouse:
+    $ref: '../sub-schemas/EntityWarehouse.yaml'
+  medical:
+    $ref: '../sub-schemas/EntityMedical.yaml'
+  created_at:
+    type: string
+  created_by:
+    type: string # TODO: user schema
+  updated_at:
+    type: string
+  updated_by:
+    type: string # TODO: user schema

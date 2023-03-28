@@ -15,7 +15,7 @@ properties:
   organization:
     type: string
   name:
-    $ref: "../sub-schemas/PersonName.yaml"
+    type: string
   about:
     type: string
   type:
@@ -29,6 +29,12 @@ properties:
       - BUKA
       - TUTUP
       - PEMELIHARAAN
+  logo:
+    type: string
+  banner:
+    type: string
+  color:
+    type: string
   is_address_same_as_org:
     type: boolean
   address:

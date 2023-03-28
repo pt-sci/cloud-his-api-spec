@@ -1,19 +1,40 @@
 type: object
 required:
   - _id
-  - organization
+  - ssn
   - name
+  - gender
+  - place_of_birth
+  - birthdate
+  - address
+  - phone_number
+  - organization
   - position
+  - need_account_login
   - account
-  - createdAt
-  - createdBy
 properties:
   _id:
     type: string
-  organization:
+  ssn:
     type: string
   name:
-    $ref: "../sub-schemas/PersonName.yaml"
+    $ref: '../sub-schemas/PersonName.yaml'
+  gender:
+    type: string
+  place_of_birth:
+    type: string
+  birthdate:
+    type: string
+  address:
+    $ref: '../sub-schemas/Address.yaml'
+  religion: 
+    type: string
+  phone_number: 
+    type: string
+  organization:
+    type: string
+  need_account_login:
+    type: boolean
   position:
     type: string
     enum:
@@ -21,18 +42,13 @@ properties:
       - DOCTOR
       - NURSE
       - STAFF
-  account:
-    $ref: '../sub-schemas/AccountResponse.yaml'
+  type:
+    type: string
   status:
     type: string
-    enum:
-      - AKTIF
-      - NON-AKTIF
+  account:
+    $ref: '../sub-schemas/Account.yaml'
   created_at:
     type: string
   created_by:
-    type: string
-  updated_at:
-    type: string
-  updated_by:
     type: string

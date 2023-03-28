@@ -18,17 +18,18 @@ get:
       schema:
         type: string
       examples:
-        p:
+        q:
           summary: an example for search query
           value: solusi cipta integrasi
     - name: s
+      description: fieldname=type=value
       in: query
       schema:
         type: string
       examples:
         s:
           summary: an example for filter query
-          value: name=text=solusi cipta integrasi
+          value: name=text=solusi cipta integrasi;about=text=perusahaan
   responses:
     "200":
       description: Succesfully get all employees

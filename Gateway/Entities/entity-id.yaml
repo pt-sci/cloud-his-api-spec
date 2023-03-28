@@ -21,7 +21,7 @@ get:
               message:
                 type: string
               data:
-                $ref: "../../schemas/EntitiesResponse.yaml"
+                $ref: "../../schemas/EntitiesGateway.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":
