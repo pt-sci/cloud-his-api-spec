@@ -62,6 +62,8 @@ paths:
     $ref: './Core/Entities/entity-id.yaml'
   /entity/change-status/{id}:
     $ref: './Core/Entities/entity-change-status-id.yaml'
+  /entity/assign-employee:
+    $ref: './Core/Entities/entity-assign-employee.yaml'
   /organizations:
     $ref: './Core/Organizations/organizations.yaml'
   /organization:

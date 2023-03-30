@@ -70,6 +70,8 @@ paths:
     $ref: './Gateway/Entities/entity-upload-logo-id.yaml'
   /entity/upload-banner/{id}:
     $ref: './Gateway/Entities/entity-upload-logo-id.yaml'
+  /entity/assign-employee:
+    $ref: './Gateway/Entities/entity-assign-employee.yaml'
   /organizations:
     $ref: './Gateway/Organizations/organizations.yaml'
   /organization:

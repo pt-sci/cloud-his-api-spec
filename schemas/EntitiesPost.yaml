@@ -31,6 +31,8 @@ properties:
     items:
       type: string
       format: binary
+  color:
+    type: string
   is_address_same_as_org:
     type: boolean
   address:
