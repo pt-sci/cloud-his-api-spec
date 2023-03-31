@@ -41,6 +41,10 @@ properties:
       - STAFF
   type:
     type: string
+  entities:
+    type: array
+    items:
+      type: string
   status:
     type: string
   account:

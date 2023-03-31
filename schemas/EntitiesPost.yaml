@@ -31,6 +31,8 @@ properties:
     items:
       type: string
       format: binary
+  color:
+    type: string
   is_address_same_as_org:
     type: boolean
   address:
@@ -39,6 +41,16 @@ properties:
     $ref: '../sub-schemas/EntityWarehouse.yaml'
   medical:
     $ref: '../sub-schemas/EntityMedical.yaml'
+  using_template:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: ['FORM_REGIS_PASIEN']
+        template_id:
+          type: string
   created_at:
     type: string
   created_by:

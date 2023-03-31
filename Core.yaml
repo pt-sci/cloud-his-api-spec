@@ -25,9 +25,11 @@ tags:
   - name: entity
     description: Operation about authentication
   - name: organization
-    description: Operation about the organization
+    description: Operation about organization
+  - name: template
+    description: Operation about template
   - name: zipcode
-    description: Operation about the zipcode
+    description: Operation about zipcode
 
 paths:
   /auth/send-reset-password:
@@ -60,6 +62,8 @@ paths:
     $ref: './Core/Entities/entity-id.yaml'
   /entity/change-status/{id}:
     $ref: './Core/Entities/entity-change-status-id.yaml'
+  /entity/assign-employee:
+    $ref: './Core/Entities/entity-assign-employee.yaml'
   /organizations:
     $ref: './Core/Organizations/organizations.yaml'
   /organization:
@@ -70,5 +74,11 @@ paths:
     $ref: './Core/Organizations/organization-send-activation-link.yaml'
   /organization/activate/{account_email}:
     $ref: './Core/Organizations/organization-activate-account-email.yaml'
+  /templates:
+    $ref: "./Core/Template/templates.yaml"
+  /template:
+    $ref: "./Core/Template/template.yaml"
+  /template/{id}:
+    $ref: "./Core/Template/template-id.yaml"
   /zipcodes:
     $ref: './Core/Zipcodes/zipcodes.yaml'
