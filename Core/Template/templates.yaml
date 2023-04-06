@@ -3,6 +3,15 @@ get:
     - template
   description: Get all templates with or without filter
   parameters:
+    - name: category
+      in: path
+      required: true
+      schema:
+        type: string
+      examples:
+        category:
+          summary: an example for category templates
+          value: form
     - name: limit
       in: query
       required: true
