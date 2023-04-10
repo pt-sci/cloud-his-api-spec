@@ -17,3 +17,7 @@ properties:
         type: array
         items:
           type: string
+      optional:
+        type: array
+        items:
+          type: string

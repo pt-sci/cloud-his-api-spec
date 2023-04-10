@@ -74,7 +74,7 @@ paths:
     $ref: './Core/Organizations/organization-send-activation-link.yaml'
   /organization/activate/{account_email}:
     $ref: './Core/Organizations/organization-activate-account-email.yaml'
-  /templates:
+  /templates/{category}:
     $ref: "./Core/Template/templates.yaml"
   /template:
     $ref: "./Core/Template/template.yaml"

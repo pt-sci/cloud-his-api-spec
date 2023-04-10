@@ -82,7 +82,7 @@ paths:
     $ref: './Gateway/Organizations/organization-send-activation-link.yaml'
   /organization/activate/{account_email}:
     $ref: './Gateway/Organizations/organization-activate-account-email.yaml'
-  /templates:
+  /templates/{category}:
     $ref: "./Gateway/Template/templates.yaml"
   /template:
     $ref: "./Gateway/Template/template.yaml"
