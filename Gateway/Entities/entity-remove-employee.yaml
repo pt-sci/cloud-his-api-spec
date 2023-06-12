@@ -1,0 +1,19 @@
+patch:
+  tags:
+    - entity
+  description: Remove employee from entity
+  requestBody:
+    required: true
+    content: 
+      application/json:
+        schema:
+          $ref: "../../schemas/EntityEmployeePost.yaml"
+  responses:
+    "200":
+      $ref: "../../responses/200.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

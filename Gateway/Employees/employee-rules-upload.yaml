@@ -1,0 +1,33 @@
+post:
+  tags:
+    - employee
+  description: Upload rules
+  requestBody:
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - type: string
+            - type: object
+              properties:
+                platform:
+                  type: string
+                rulesVersion:
+                  type: number
+                access:
+                  type: object
+                rules:
+                  type: object
+                  properties:
+                    contextName:
+                      type: object
+  responses:
+    "200":
+      $ref: "../../responses/200.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"
+      

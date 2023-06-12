@@ -1,16 +1,15 @@
 get:
   tags:
-    - employee
-  description: Get an employee
+    - patient
+  description: Get an patient by id
   parameters:
     - name: id
-      in: path
       required: true
       schema:
         type: string
-  responses: 
+  responses:
     "200":
-      description: Succesfully get an employee
+      description: Succesfully get patient
       content:
         application/json:
           schema:
@@ -21,7 +20,7 @@ get:
               message:
                 type: string
               data:
-                $ref: "../../schemas/Employee.yaml"
+                $ref: "../../schemas/Patient.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":
@@ -30,11 +29,10 @@ get:
       $ref: "../../responses/500.yaml"
 put:
   tags:
-    - employee
-  description: Update an employee data
+    - patient
+  description: Update an patient
   parameters:
     - name: id
-      in: path
       required: true
       schema:
         type: string
@@ -43,7 +41,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: "../../schemas/Employee.yaml"
+          $ref: "../../schemas/PatientRequest.yaml"
   responses:
     "200":
       $ref: "../../responses/200.yaml"

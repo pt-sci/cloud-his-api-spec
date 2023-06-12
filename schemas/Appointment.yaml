@@ -1,40 +1,56 @@
 type: object
 required:
   - _id
+  - appointment_no
   - mrn
-  - unit
   - doctor
-  - date
+  - unit
   - time
+  - que_no
+  - date
+  - method
+  - visit_type
+  - status
+  - created_at
+  - created_by
 properties:
-  _id:
+  _id: 
     type: string
-  mrn:
+  appointment_no: 
     type: string
-  unit:
+  mrn: 
     type: string
-  doctor:
+  doctor: 
     type: string
-  date:
+  unit: 
     type: string
-  time:
+  time: 
     type: string
-  note:
+  que_no: 
     type: string
-  status:
-    type: object
-    properties:
-      canceled:
-        type: boolean
-      registered:
-        type: boolean
-  registration:
+  date: 
     type: string
-  createdAt:
+  method: 
     type: string
-  createdBy:
+  visit_type: 
     type: string
-  updatedAt:
+  guarantor: 
     type: string
-  updatedBy:
+  guarantor_no: 
+    type: string
+  status: 
+    type: string
+  cancel_reason: 
+    type: string
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  updated_at: 
+    type: string
+  updated_by: 
+    type: string
+  canceled_at: 
+    type: string
+  canceled_by: 
     type: string

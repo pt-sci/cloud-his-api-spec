@@ -1,0 +1,29 @@
+type: object
+properties:
+  registration_no: 
+    type: string
+  diagnose_id: 
+    type: string
+  diagnose_text: 
+    type: string
+  diagnose_type:
+    type: string
+    enum:
+      - UTAMA
+      - KOMPLIKASI
+      - SEKUNDER
+      - LAIN-LAIN
+  is_void: 
+    type: boolean
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  last_updated_at: 
+    type: string
+  last_updated_by: 
+    type: string
+  void_at:
+    type: string
+  void_by:
+    type: string

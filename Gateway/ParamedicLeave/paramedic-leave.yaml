@@ -1,0 +1,19 @@
+post:
+  tags:
+    - paramedic leave
+  description: create paramedic leave
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/ParamedicLeaveRequest.yaml"
+  responses:
+    "201":
+      $ref: "../../responses/201.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

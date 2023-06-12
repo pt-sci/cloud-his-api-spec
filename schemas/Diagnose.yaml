@@ -1,0 +1,30 @@
+type: object
+required:
+  - _id
+  - diagnose_name
+  - dtd_id
+  - is_chronic_disease
+  - is_disease
+  - is_active
+properties:
+  _id: 
+    type: string
+  diagnose_name:
+    type: string
+  dtd_id: 
+    type: string
+  is_chronic_disease: 
+    type: boolean
+  is_disease: 
+    type: boolean
+  is_active: 
+    type: boolean
+  dtd: 
+    type: object
+    properties:
+      dtd_name: 
+        type: string
+      dtd_label: 
+        type: string
+      is_active: 
+        type: boolean

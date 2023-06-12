@@ -1,56 +1,86 @@
 type: object
 required:
+  - _id
+  - registration_no
   - mrn
-  - unit
   - doctor
-  - date
+  - unit
   - time
-  - queue
+  - que_no
+  - registration_type
+  - date
+  - registration_status
+  - created_at
+  - created_by
 properties:
-  _id:
+  _id: 
     type: string
-  mrn:
+  registration_no: 
     type: string
-  SEP:
+  appointment_no: 
     type: string
-  unit:
+  mrn: 
     type: string
-  doctor:
+  doctor: 
     type: string
-  date:
+  unit: 
     type: string
-  time:
+  time: 
     type: string
-  queue:
+  que_no: 
     type: string
-  note:
+  registration_type: 
     type: string
-  status:
+  date: 
+    type: string
+  sep: 
+    type: string
+  guarantor: 
+    type: string
+  guarantor_no: 
+    type: string
+  note: 
+    type: string
+  referral_from: 
+    type: string
+  service_time:
     type: object
     properties:
-      visit:
-        type: boolean
-      canceled:
-        type: boolean
-      ready:
-        type: boolean
-      fromAppointment:
-        type: boolean
-      referral:
-        type: boolean
-  registration:
+      confirmed_at: 
+        type: string
+      served_at: 
+        type: string
+      finished_at: 
+        type: string
+  cob: 
     type: string
-  appointment:
+  registration_status: 
     type: string
-  createdAt:
+  cancel_reason: 
     type: string
-  createdBy:
+  is_void: 
+    type: boolean
+  void_note: 
     type: string
-  updatedAt:
+  void_reason: 
     type: string
-  updatedBy:
+  void_at: 
     type: string
-  readyAt:
+  void_by: 
     type: string
-  readyBy:
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  last_updated_at: 
+    type: string
+  last_updated_by: 
+    type: string
+  canceled_at: 
+    type: string
+  canceled_by: 
+    type: string
+  discharged_at: 
+    type: string
+  discharged_by: 
     type: string

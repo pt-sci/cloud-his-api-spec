@@ -1,0 +1,25 @@
+post:
+  tags:
+    - registration
+  description: Create medical note for registration
+  parameters:
+    - name: registration_no
+      in: query
+      required: true
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/MedicalNotesRequest.yaml'
+  responses:
+    "201":
+      $ref: "../../responses/201.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

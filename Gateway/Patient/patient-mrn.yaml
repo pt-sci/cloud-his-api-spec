@@ -1,16 +1,15 @@
 get:
   tags:
-    - organization
-  description: Get an organization data
+    - patient
+  description: Get an patient by mrn
   parameters:
-    - name: id
-      in: path
+    - name: mrn
       required: true
       schema:
         type: string
   responses:
     "200":
-      description: Succesfully get an organization
+      description: Succesfully get patient
       content:
         application/json:
           schema:
@@ -21,7 +20,7 @@ get:
               message:
                 type: string
               data:
-                $ref: "../../schemas/Organization.yaml"
+                $ref: "../../schemas/Patient.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":

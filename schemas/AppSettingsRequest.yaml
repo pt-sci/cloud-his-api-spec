@@ -1,0 +1,22 @@
+type: object
+properties:
+  settings:
+    type: object
+    properties:
+      rules:
+        type: object
+        properties:
+          defaultView:
+            type: string
+      branding:
+        type: object
+        properties:
+          logo:
+            type: string
+          color:
+            type: string
+      account:
+        type: object
+        properties:
+          invitationDuration:
+            type: string

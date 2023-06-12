@@ -1,16 +1,20 @@
 get:
   tags:
-    - employee
-  description: Get an employee
+    - medical notes
+  description: Get all medical notes with registration number
   parameters:
-    - name: id
-      in: path
+    - name: regnum
+      in: query
       required: true
       schema:
         type: string
-  responses: 
+      examples:
+        query:
+          summary: an example for registration numebr
+          value: 'REG/EM/230530/0001'
+  responses:
     "200":
-      description: Succesfully get an employee
+      description: Succesfully get all medical notes
       content:
         application/json:
           schema:
@@ -21,32 +25,26 @@ get:
               message:
                 type: string
               data:
-                $ref: "../../schemas/Employee.yaml"
+                $ref: "../../schemas/MedicalNotes.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":
       $ref: "../../responses/403.yaml"
     "500":
       $ref: "../../responses/500.yaml"
-put:
+post:
   tags:
-    - employee
-  description: Update an employee data
-  parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: string
+    - medical notes
+  description: create medical note
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: "../../schemas/Employee.yaml"
+          $ref: "../../schemas/MedicalNotesRequest.yaml"
   responses:
-    "200":
-      $ref: "../../responses/200.yaml"
+    "201":
+      $ref: "../../responses/201.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":

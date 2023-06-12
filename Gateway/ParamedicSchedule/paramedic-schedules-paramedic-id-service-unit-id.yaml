@@ -1,16 +1,20 @@
 get:
   tags:
-    - organization
-  description: Get an organization data
+    - paramedic schedule
+  description: Get all paramedic schedule
   parameters:
-    - name: id
+    - name: paramedic_id
       in: path
       required: true
       schema:
         type: string
+    - name: service_unit_id
+      in: path
+      schema:
+        type: string
   responses:
     "200":
-      description: Succesfully get an organization
+      description: Succesfully get all paramedic schedules
       content:
         application/json:
           schema:
@@ -21,7 +25,14 @@ get:
               message:
                 type: string
               data:
-                $ref: "../../schemas/Organization.yaml"
+                type: object
+                properties:
+                  count:
+                    type: number
+                  rows:
+                    type: array
+                    items:
+                      $ref: "../../schemas/ParamedicSchedule.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":

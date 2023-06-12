@@ -1,0 +1,41 @@
+get:
+  tags:
+    - employee
+  description: Get latest rules
+  parameters:
+    - name: platform
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: view
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - type: object
+                properties:
+                  platform:
+                    type: string
+                  rulesVersion:
+                    type: number
+                  access:
+                    type: object
+                  rules:
+                    type: object
+                    properties:
+                      contextName:
+                        type: object
+              - type: string
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

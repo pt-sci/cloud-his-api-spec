@@ -1,16 +1,16 @@
 get:
   tags:
-    - employee
-  description: Get an employee
+    - registration
+  description: Get a registration by id
   parameters:
     - name: id
       in: path
       required: true
       schema:
         type: string
-  responses: 
+  responses:
     "200":
-      description: Succesfully get an employee
+      description: Successfully get a registration
       content:
         application/json:
           schema:
@@ -21,7 +21,7 @@ get:
               message:
                 type: string
               data:
-                $ref: "../../schemas/Employee.yaml"
+                $ref: '../../schemas/Registration.yaml'
     "401":
       $ref: "../../responses/401.yaml"
     "403":
@@ -30,8 +30,8 @@ get:
       $ref: "../../responses/500.yaml"
 put:
   tags:
-    - employee
-  description: Update an employee data
+    - registration
+  description: Update an registration
   parameters:
     - name: id
       in: path
@@ -43,7 +43,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: "../../schemas/Employee.yaml"
+          $ref: "../../schemas/RegistrationRequest.yaml"
   responses:
     "200":
       $ref: "../../responses/200.yaml"

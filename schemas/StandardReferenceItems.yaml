@@ -1,0 +1,38 @@
+type: object
+required:
+  - _id
+  - standard_reference_id
+  - entity
+  - organization
+  - items
+properties:
+  _id:
+    type: string
+  standard_reference_id:
+    type: string
+  entity:
+    type: string
+  organization:
+    type: string
+  items:
+    type: array
+    items:
+      type: object
+      properties:
+        _id:
+          type: string
+        value:
+          type: string
+        description:
+          type: string
+        is_active:
+          type: string
+        created_at:
+          type: string
+        created_by:
+          type: string
+        last_updated_at:
+          type: string
+        last_updated_by:
+          type: string
+  

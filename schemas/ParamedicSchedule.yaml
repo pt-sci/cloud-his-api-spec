@@ -1,0 +1,47 @@
+type: object
+required:
+  - _id
+  - paramedic_id
+  - service_unit_id
+  - period
+  - session
+properties:
+  _id:
+    type: string
+  paramedic_id:
+    type: string
+  service_unit_id:
+    type: string
+  period:
+    type: object
+    properties:
+      year:
+        type: number
+      month:
+        type: number
+  session:
+    type: array
+    items:
+      type: object
+      properties:
+        date:
+          type: number
+        time:
+          type: array
+          items:
+            type: object
+            properties:
+              start:
+                type: string
+              end:
+                type: string
+        day:
+          type: number
+  created_at:
+    type: string
+  created_by:
+    type: string
+  last_updated_at:
+    type: string
+  last_updated_by:
+    type: string

@@ -1,0 +1,18 @@
+patch:
+  tags:
+    - patient
+  description: Blacklist patient
+  parameters:
+    - name: id
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      $ref: "../../responses/200.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"
