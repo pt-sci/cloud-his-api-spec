@@ -1,0 +1,33 @@
+post:
+  tags:
+    - paramedic schedule
+  description: create paramedic schedule
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../schemas/ParamedicScheduleRequest.yaml'
+  responses:
+    "201":
+      $ref: "../../responses/201.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"
+put:
+  tags:
+    - paramedic schedule
+  description: updadte schedule
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../schemas/ParamedicScheduleRequest.yaml'

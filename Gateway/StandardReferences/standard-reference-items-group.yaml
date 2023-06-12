@@ -1,0 +1,64 @@
+get:
+  tags:
+    - standard references
+  description: Get all standard reference items with or without filter
+  parameters:
+    - name: group
+      in: path
+      required: true
+      schema:
+        type: string
+        enum:
+          - PREFIX
+          - EMPLOYEE_TYPE
+          - PROFESSION
+          - RELIGION
+          - BLOOD_TYPE
+          - MARITAL_STATUS
+          - RELATION
+    - name: limit
+      in: query
+      required: true
+      schema:
+        type: integer
+    - name: skip
+      in: query
+      required: true
+      schema:
+        type: integer
+    - name: s
+      description: fieldname=type=value
+      in: query
+      schema:
+        type: string
+      examples:
+        s:
+          summary: an example for filter query
+          value: name=text=solusi cipta integrasi;about=text=perusahaan
+  responses:
+    "200":
+      description: Succesfully get all standard reference items
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: object
+                properties:
+                  count:
+                    type: number
+                  rows:
+                    type: array
+                    items:
+                      $ref: "../../schemas/StandardReferenceItems.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

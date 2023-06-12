@@ -1,0 +1,42 @@
+get:
+  tags:
+    - medical notes
+  description: Get all medical notes with uid
+  parameters:
+    - name: limit
+      in: query
+      required: true
+      schema:
+        type: integer
+    - name: skip
+      in: query
+      required: true
+      schema:
+        type: integer
+  responses:
+    "200":
+      description: Succesfully get all medical notes
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: object
+                properties:
+                  count:
+                    type: number
+                  rows:
+                    type: array
+                    items:
+                      $ref: "../../schemas/MedicalNotes.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

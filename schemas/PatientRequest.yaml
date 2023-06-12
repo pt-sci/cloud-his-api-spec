@@ -1,0 +1,128 @@
+type: object
+required:
+  - mrn
+  - ssn
+  - name
+  - religion
+  - occupation
+  - education
+  - marital_status
+  - patient_status
+  - created_at
+  - created_by
+properties:
+  mrn: 
+    type: string
+  ssn: 
+    type: string
+  name: 
+    type: object
+    required:
+      - first
+      - last
+    properties: 
+      prefix: 
+        type: string
+      first: 
+        type: string
+      middle: 
+        type: string
+      last: 
+        type: string
+      suffix: 
+        type: string
+  religion:
+    type: string
+    enum: 
+      - ISLAM
+      - PROTESTAN
+      - KATHOLIK
+      - HINDU
+      - BUDDHA
+      - KHONGHUCU
+  occupation: 
+    type: string
+  education: 
+    type: string
+  marital_status: 
+    type: string
+  additional_data:
+    type: object
+    required:
+      - address
+      - contact
+      - emergency_contact
+      - status
+      - guarantor_no
+    properties:
+      dob: 
+        type: string
+      pob: 
+        type: string
+      address:
+        $ref: '../sub-schemas/Address.yaml'
+      temporary_address:
+        $ref: '../sub-schemas/Address.yaml'
+      contact:
+        type: object
+        properties:
+          name: 
+            type: string
+          ssn: 
+            type: string
+          relation: 
+            type: string
+          email: 
+            type: string
+          phone_number: 
+            type: array
+            items:
+              type: string
+        emergency_contact:
+          type: object
+          properties:
+            name: 
+              type: string
+            ssn: 
+              type: string
+            relation: 
+              type: string
+            email: 
+              type: string
+            phone_number: 
+              type: array
+              items:
+                type: string
+        status:
+          type: object
+          properties:
+            is_blacklisted: 
+              type: boolean
+            is_alive: 
+              type: boolean
+            blacklisted_at: 
+              type: string
+            whitelisted_at: 
+              type: string
+            deceased_at: 
+              type: string
+        notes: 
+          type: string
+        guarantor:
+          type: string
+        guarantor_no: 
+          type: string
+  patient_status: 
+    type: boolean
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  last_updated_at: 
+    type: string
+  last_updated_by: 
+    type: string
+  status_changed_at: 
+    type: string
+  status_changed_by: 
+    type: string

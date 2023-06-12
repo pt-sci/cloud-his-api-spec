@@ -1,0 +1,26 @@
+patch:
+  tags:
+    - employee
+  description: Remove employee from faskes
+  requestBody:
+    required: 
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            employee:
+              type: string
+            entities:
+              type: array
+              items:
+                type: string
+  responses:
+    "200":
+      $ref: "../../responses/200.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

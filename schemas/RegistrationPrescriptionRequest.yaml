@@ -1,0 +1,33 @@
+type: object
+properties:
+  registration_no:
+    type: string
+  service_unit_id: 
+    type: string
+  paramedic_id: 
+    type: string
+  class_id: 
+    type: string
+  room_id: 
+    type: string
+  bed_id: 
+    type: string
+  date:
+    type: string
+  is_void:
+    type: boolean
+  items:
+    type: array
+    items:
+      type: object
+      properties:
+        product_id: 
+          type: string
+        price: 
+          type: number
+        quantity: 
+          type: number
+        unit_type: 
+          type: string
+        total_price: 
+          type: number

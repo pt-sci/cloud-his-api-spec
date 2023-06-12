@@ -1,0 +1,40 @@
+type: object
+properties:
+  appointment_no: 
+    type: string
+  mrn: 
+    type: string
+  doctor: 
+    type: string
+  unit: 
+    type: string
+  time: 
+    type: string
+  que_no: 
+    type: string
+  date: 
+    type: string
+  method: 
+    type: string
+  visit_type: 
+    type: string
+  guarantor: 
+    type: string
+  guarantor_no: 
+    type: string
+  status: 
+    type: string
+  cancel_reason: 
+    type: string
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  updated_at: 
+    type: string
+  updated_by: 
+    type: string
+  canceled_at: 
+    type: string
+  canceled_by: 
+    type: string

@@ -1,0 +1,37 @@
+type: object
+properties:
+  date: 
+    type: string
+  time: 
+    type: string
+  notes:
+    type: object
+    properties:
+      subjective: 
+        type: string
+      objective:
+        type: string
+      assessment:
+        type: string
+      planning: 
+        type: string
+      evaluation:
+        type: string
+  intervention: 
+    type: string
+  attending_notes: 
+    type: string
+  is_void: 
+    type: boolean
+  void_at: 
+    type: string
+  void_by: 
+    type: string
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  updated_at: 
+    type: string
+  updated_by: 
+    type: string

@@ -1,0 +1,20 @@
+type: object
+required:
+  - paramedic_id
+  - service_unit_id
+  - date
+  - time
+properties:
+  paramedic_id:
+    type: string
+  service_unit_id:
+    type: string
+  date:
+    type: string
+  time:
+    type: object
+    properties:
+      start:
+        type: string
+      end:
+        type: string

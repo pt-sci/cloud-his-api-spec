@@ -1,0 +1,43 @@
+get:
+  tags:
+    - employee
+  description: Get list rules of organization
+  parameters:
+    - name: platform
+      required: true
+      in: query
+      schema:
+        type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: object
+                properties:
+                  count:
+                    type: number
+                  rows:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        filename:
+                          type: string
+                        url:
+                          type: string
+                        createdDate:
+                          type: string
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

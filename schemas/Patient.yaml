@@ -1,180 +1,131 @@
 type: object
 required:
   - _id
-  - parent
-  - ssn
   - mrn
+  - ssn
   - name
-  - birth
-  - contact
-  - address
-  - gender
-  - blood
   - religion
-  - guarantor
-  - status
-  - visit
-  - createdAt
-  - createdBy
-  - updatedAt
-  - updatedBy
+  - occupation
+  - education
+  - marital_status
+  - patient_status
+  - created_at
+  - created_by
 properties:
-  _id:
+  _id: 
     type: string
-  parent:
+  mrn: 
+    type: string
+  ssn: 
+    type: string
+  name: 
     type: object
     required:
-      - organization
-    properties:
-      organization:
-        $ref: ./Organization.yaml
-  ssn:
-    type: string
-  mrn:
-    type: string
-  bpjsNo:
-    type: string
-  name:
-    type: object
-    required:
-      - firstname
-      - middlename
-      - lastname
-    properties:
-      firstname:
+      - first
+      - last
+    properties: 
+      prefix: 
         type: string
-      middlename:
+      first: 
         type: string
-      lastname:
+      middle: 
         type: string
-  fullname:
-    type: string
-  birth:
-    type: object
-    required:
-      - city
-      - date
-    properties:
-      city:
+      last: 
         type: string
-      date:
-        type: string
-  contact:
-    type: object
-    required:
-      - personal
-    properties:
-      personal:
-        type: object
-        required:
-          - email
-          - mobile
-          - phone
-        properties:
-          email:
-            type: string
-          mobile:
-            type: string
-          phone:
-            type: string
-      emergency:
-        type: array
-        items:
-          type: object
-          required:
-            - name
-            - mobile
-            - phone
-          properties:
-            name:
-              type: string
-            mobile:
-              type: string
-            phone:
-              type: string
-  address:
-    type: object
-    required:
-      - street
-      - subdistrict
-      - district
-      - city
-    properties:
-      street:
-        type: string
-      subdistrict:
-        type: string
-      district:
-        type: string
-      city:
-        type: string
-      province:
-        type: string
-      zipcode:
-        type: string
-  gender:
-    type: string
-  blood:
-    type: object
-    required:
-      - type
-      - rhesus
-    properties:
-      type:
-        type: string
-      rhesus:
+      suffix: 
         type: string
   religion:
     type: string
-  guarantor:
+    enum: 
+      - ISLAM
+      - PROTESTAN
+      - KATHOLIK
+      - HINDU
+      - BUDDHA
+      - KHONGHUCU
+  occupation: 
     type: string
-  status:
+  education: 
+    type: string
+  marital_status: 
+    type: string
+  additional_data:
     type: object
     required:
-      - alive
-      - active
-      - blocklist
+      - address
+      - contact
+      - emergency_contact
+      - status
+      - guarantor_no
     properties:
-      alive:
-        type: boolean
-      active:
-        type: boolean
-      blocklist:
-        type: boolean
-  visit:
-    type: object
-    required:
-      - total
-      - first
-      - last
-    properties:
-      total:
-        type: integer
-      first:
+      dob: 
+        type: string
+      pob: 
+        type: string
+      address:
+        $ref: '../sub-schemas/Address.yaml'
+      temporary_address:
+        $ref: '../sub-schemas/Address.yaml'
+      contact:
         type: object
-        required:
-          - entity
-          - date
         properties:
-          entity:
-            $ref: ./Entities.yaml
-          date:
+          name: 
             type: string
-      last:
-        type: object
-        required:
-          - entity
-          - date
-        properties:
-          entity:
-            $ref: ./Entities.yaml
-          date:
+          ssn: 
             type: string
-  createdAt:
+          relation: 
+            type: string
+          email: 
+            type: string
+          phone_number: 
+            type: array
+            items:
+              type: string
+        emergency_contact:
+          type: object
+          properties:
+            name: 
+              type: string
+            ssn: 
+              type: string
+            relation: 
+              type: string
+            email: 
+              type: string
+            phone_number: 
+              type: array
+              items:
+                type: string
+        status:
+          type: object
+          properties:
+            is_blacklisted: 
+              type: boolean
+            is_alive: 
+              type: boolean
+            blacklisted_at: 
+              type: string
+            whitelisted_at: 
+              type: string
+            deceased_at: 
+              type: string
+        notes: 
+          type: string
+        guarantor:
+          type: string
+        guarantor_no: 
+          type: string
+  patient_status: 
+    type: boolean
+  created_at: 
     type: string
-  createdBy:
-    type: string # TODO: change to reference user schema
-  updatedAt:
+  created_by: 
     type: string
-  updatedBy:
+  last_updated_at: 
+    type: string
+  last_updated_by: 
+    type: string
+  status_changed_at: 
+    type: string
+  status_changed_by: 
     type: string

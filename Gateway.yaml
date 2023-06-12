@@ -18,35 +18,67 @@ security:
   - bearerToken: []
 
 tags:
+  - name: appointment
+    description: Operation about appointment
   - name: auth
     description: Operation about authentication
+  - name: diagnose
+    description: Operation about diagnose
   - name: employee
     description: Operation about employee
   - name: entity
     description: Operation about entity
+  - name: medical notes
+    description: Operation about medical notes
   - name: organization
     description: Operation about organization
+  - name: paramedic leave
+    description: Operation about paramedic leave
+  - name: paramedic schedule
+    description: Operation about paramedic schedule
+  - name: patient
+    description: Operation about patient
+  - name: registration
+    description: Operation about registration
+  - name: standard references
+    description: Operation about standard references
   - name: template
     description: Operation about template
   - name: zipcode
     description: Operation about zipcode
 
 paths:
+  /appointments:
+    $ref: "./Gateway/Appointment/appointments.yaml"
+  /appointment:
+    $ref: './Gateway/Appointment/appointment.yaml'
+  /appointment/{id}:
+    $ref: './Gateway/Appointment/appointment-id.yaml'
+  /appointment/{id}/cancel:
+    $ref: './Gateway/Appointment/appointment-id-cancel.yaml'
+  /appointment/{id}/reschedule:
+    $ref: './Gateway/Appointment/appointment-id-reschedule.yaml'
   /auth/check-role-entity/{id}:
     $ref: './Gateway/Auth/auth-check-role-entity.yaml'
   /auth/send-reset-password:
     $ref: './Gateway/Auth/auth-send-reset-password.yaml'
   /auth/reset-password:
     $ref: './Gateway/Auth/auth-reset-password.yaml'
+  /auth/change-password:
+    $ref: './Gateway/Auth/auth-change-password.yaml'
+  /diagnoses:
+    $ref: './Gateway/Diagnose/diagnoses.yaml'
   /employees:
     $ref: './Gateway/Employees/employees.yaml'
   /employee:
     $ref: './Gateway/Employees/employee.yaml'
   /employee/{id}:
     $ref: './Gateway/Employees/employee-id.yaml'
-  /employee/assign-employee:
+  /employee/entities-of/{employee}:
+    $ref: './Gateway/Employees/employee-entity-of-employee.yaml'
+  /employee/assign-to-entity:
     $ref: './Gateway/Employees/employee-assign-employee.yaml'
-  /employee/send-confirmation-email:
+  /employee/send-confirmation-link:
     $ref: './Gateway/Employees/employee-send-confirmation-email.yaml'
   /employee/change-status/{id}:
     $ref: './Gateway/Employees/employee-change-status-id.yaml'
@@ -56,9 +88,19 @@ paths:
     $ref: './Gateway/Employees/employee-create-account.yaml'
   /employee/create-password:
     $ref: './Gateway/Employees/employee-create-password.yaml'
+  /employee/rules/upload:
+    $ref: './Gateway/Employees/employee-rules-upload.yaml'
+  /employee/rules/latest:
+    $ref: './Gateway/Employees/employee-rules-latest.yaml'
+  /employee/rules/list:
+    $ref: './Gateway/Employees/employee-rules-list.yaml'
+  /employee/remove-entity:
+    $ref: './Gateway/Employees/employee-remove-entity.yaml'
+  /employee/cancel-invitation/{id}:
+    $ref: './Gateway/Employees/employee-cancel-invitation-id.yaml'
   /entities:
     $ref: './Gateway/Entities/entities.yaml'
-  /entities/find-by-employee/{id}:
+  /entities/employees/{id}:
     $ref: './Gateway/Entities/entities-find-by-employee-id.yaml'
   /entity:
     $ref: './Gateway/Entities/entity.yaml'
@@ -72,6 +114,20 @@ paths:
     $ref: './Gateway/Entities/entity-upload-logo-id.yaml'
   /entity/assign-employee:
     $ref: './Gateway/Entities/entity-assign-employee.yaml'
+  /entity/remove-employee:
+    $ref: './Gateway/Entities/entity-remove-employee.yaml'
+  /medical-notes:
+    $ref: './Gateway/MedicalNotes/medical-notes.yaml'
+  /medical-notes/mrn:
+    $ref: './Gateway/MedicalNotes/medical-notes-mrn.yaml'
+  /medical-notes/uid:
+    $ref: './Gateway/MedicalNotes/medical-notes-uid.yaml'
+  /medical-note:
+    $ref: './Gateway/MedicalNotes/medical-note.yaml'
+  /medical-note/{id}:
+    $ref: './Gateway/MedicalNotes/medical-note-id.yaml'
+  /medical-note/void/{id}:
+    $ref: './Gateway/MedicalNotes/medical-note-void-id.yaml'
   /organizations:
     $ref: './Gateway/Organizations/organizations.yaml'
   /organization:
@@ -82,10 +138,76 @@ paths:
     $ref: './Gateway/Organizations/organization-send-activation-link.yaml'
   /organization/activate/{account_email}:
     $ref: './Gateway/Organizations/organization-activate-account-email.yaml'
+  /organization/{id}/settings:
+    $ref: './Gateway/Organizations/organization-id-settings.yaml'
+  /organization/{id}/settings/reset:
+    $ref: './Gateway/Organizations/organization-id-settings-reset.yaml'
+  /paramedic-leaves:
+    $ref: './Gateway/ParamedicLeave/paramedic-leaves.yaml'
+  /paramedic-leaves/{paramedic_id}/{service_unit_id}:
+    $ref: './Gateway/ParamedicLeave/paramedic-leaves-paramedic-id-service-unit-id.yaml'
+  /paramedic-leave:
+    $ref: './Gateway/ParamedicLeave/paramedic-leave.yaml'
+  /paramedic-leave/{id}:
+    $ref: './Gateway/ParamedicLeave/paramedic-leave-id.yaml'
+  /paramedic-schedules:
+    $ref: './Gateway/ParamedicSchedule/paramedic-schedules.yaml'
+  /paramedic-schedules/{paramedic_id}/{service_unit_id}:
+    $ref: './Gateway/ParamedicSchedule/paramedic-schedules-paramedic-id-service-unit-id.yaml'
+  /paramedic-schedule:
+    $ref: './Gateway/ParamedicSchedule/paramedic-schedule.yaml'
+  /patients:
+    $ref: './Gateway/Patient/patients.yaml'
+  /patient:
+    $ref: './Gateway/Patient/patient.yaml'
+  /patient/{id}:
+    $ref: './Gateway/Patient/patient-id.yaml'
+  /patient/mrn/{mrn}:
+    $ref: './Gateway/Patient/patient-mrn.yaml'
+  /patient/ssn/{ssn}:
+    $ref: './Gateway/Patient/patient-ssn.yaml'
+  /patient/blacklist/{id}:
+    $ref: './Gateway/Patient/patient-blacklist-id.yaml'
+  /patient/whitelist/{id}:
+    $ref: './Gateway/Patient/patient-whitelist-id.yaml'
+  /patient/decease/{id}:
+    $ref: './Gateway/Patient/patient-decease-id.yaml'
+  /patient/decease/delete/{id}:
+    $ref: './Gateway/Patient/patient-decease-delete-id.yaml'
+  /registrations:
+    $ref: './Gateway/Registration/registrations.yaml'
+  /registration:
+    $ref: './Gateway/Registration/registration.yaml'
+  /registration/{id}:
+    $ref: './Gateway/Registration/registration-id.yaml'
+  /registration/confirm-arrival:
+    $ref: './Gateway/Registration/registration-confirm-arrival.yaml'
+  /registration/start-service:
+    $ref: './Gateway/Registration/registration-start-service.yaml'
+  /registration/diagnose:
+    $ref: './Gateway/Registration/registration-diagnose.yaml'
+  /registration/medical-note:
+    $ref: './Gateway/Registration/registration-medical-note.yaml'
+  /registration/prescription:
+    $ref: './Gateway/Registration/registration-prescription.yaml'
+  /registration/end-service:
+    $ref: './Gateway/Registration/registration-end-service.yaml'
+  /registration/cancel:
+    $ref: './Gateway/Registration/registration-cancel.yaml'
+  /registration/discharge:
+    $ref: './Gateway/Registration/registration-discharge.yaml'
+  /registration/void:
+    $ref: './Gateway/Registration/registration-void.yaml'
+  /standard-reference/items/{group}:
+    $ref: './Gateway/StandardReferences/standard-reference-items-group.yaml'
+  /standard-reference/items/{id}:
+    $ref: './Gateway/StandardReferences/standard-reference-items-create.yaml' 
+  /standard-reference/item/{id}:
+    $ref: './Gateway/StandardReferences/standard-reference-item-update.yaml'
   /templates/{category}:
     $ref: "./Gateway/Template/templates.yaml"
   /template:
-    $ref: "./Gateway/Template/template.yaml"
+    $ref: "./Gateway/Template/template-create.yaml"
   /template/{id}:
     $ref: "./Gateway/Template/template-id.yaml"
   /zipcodes:

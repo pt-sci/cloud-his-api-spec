@@ -1,0 +1,44 @@
+type: object
+required:
+  - _id
+  - prescription_no
+  - registration_no
+  - date
+  - created_at
+  - created_by
+properties:
+  _id:
+    type: string
+  prescription_no:
+    type: string
+  registration_no:
+    type: string
+  date:
+    type: string
+  is_void:
+    type: boolean
+  items:
+    type: array
+    items:
+      type: object
+      properties:
+        _id: 
+          type: string
+        product_id: 
+          type: string
+        quantity: 
+          type: number
+        unit_type: 
+          type: string
+  created_at:
+    type: string;
+  created_by:
+    type: string;
+  last_updated_at:
+    type: string;
+  last_updated_by:
+    type: string
+  void_at:
+    type: string
+  void_by:
+    type: string

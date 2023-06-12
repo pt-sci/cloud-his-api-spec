@@ -1,0 +1,17 @@
+type: object
+properties:
+  paramedic_id: 
+    type: string
+  service_unit_id: 
+    type: string
+  date: 
+    type: array
+    items:
+      type:
+        string
+  leave_reason: 
+    type: string
+  is_void: 
+    type: boolean
+  void_reason:
+    type: string

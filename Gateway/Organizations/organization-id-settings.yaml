@@ -1,16 +1,16 @@
 get:
   tags:
-    - employee
-  description: Get an employee
+    - organization
+  description: Get an app settings for organization
   parameters:
     - name: id
       in: path
       required: true
       schema:
         type: string
-  responses: 
+  responses:
     "200":
-      description: Succesfully get an employee
+      description: Succesfully get an app settings for organization
       content:
         application/json:
           schema:
@@ -21,7 +21,7 @@ get:
               message:
                 type: string
               data:
-                $ref: "../../schemas/Employee.yaml"
+                $ref: "../../schemas/AppSettings.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":
@@ -30,8 +30,8 @@ get:
       $ref: "../../responses/500.yaml"
 put:
   tags:
-    - employee
-  description: Update an employee data
+    - organization
+  description: Update an app settings for organization
   parameters:
     - name: id
       in: path
@@ -43,7 +43,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: "../../schemas/Employee.yaml"
+          $ref: "../../schemas/AppSettingsRequest.yaml"
   responses:
     "200":
       $ref: "../../responses/200.yaml"
