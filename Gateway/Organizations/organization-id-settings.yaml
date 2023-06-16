@@ -43,7 +43,25 @@ put:
     content:
       application/json:
         schema:
-          $ref: "../../schemas/AppSettingsRequest.yaml"
+          type: object
+          properties:
+            account:
+              type: object
+              properties:
+                invitationDuration: 
+                  type: number
+            branding:
+              type: object
+              properties:
+                color: 
+                  type: string
+                logo: 
+                  type: string
+            rules:
+              type: object
+              properties:
+                defaultView: 
+                  type: string
   responses:
     "200":
       $ref: "../../responses/200.yaml"
