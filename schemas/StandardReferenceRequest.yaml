@@ -14,6 +14,8 @@ properties:
     type: string
   is_active:
     type: string
+  is_editable:
+    type: boolean
   created_at:
     type: string
   created_by:
