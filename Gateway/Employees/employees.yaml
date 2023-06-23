@@ -18,7 +18,7 @@ get:
       schema:
         type: string
       examples:
-        p:
+        q:
           summary: an example for search query
           value: solusi cipta integrasi
     - name: s
