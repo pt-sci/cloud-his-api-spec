@@ -1,0 +1,46 @@
+get:
+  tags:
+    - dashboard
+  description: Get total faskes
+  parameters:
+    - name: category
+      in: query
+      required: true
+      schema:
+        type: string
+        enum: [all, status]
+  responses:
+    "200":
+      description: Successfully count employees
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+              - type: object
+                properties:
+                  statusCode:
+                    type: number
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      total:
+                        type: object
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

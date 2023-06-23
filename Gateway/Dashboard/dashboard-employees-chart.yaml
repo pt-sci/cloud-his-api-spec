@@ -1,0 +1,39 @@
+get:
+  tags:
+    - dashboard
+  description: Get total employees
+  parameters:
+    - name: year
+      in: query
+      required: true
+      schema:
+        type: number
+  responses:
+    "200":
+      description: Successfully count employees
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    label:
+                      type: string
+                    dataset1:
+                      type: number
+                    dataset2:
+                      type: number
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

@@ -22,6 +22,8 @@ tags:
     description: Operation about appointment
   - name: auth
     description: Operation about authentication
+  - name: dashboard
+    description: Operation about dashboard
   - name: diagnose
     description: Operation about diagnose
   - name: employee
@@ -66,6 +68,12 @@ paths:
     $ref: './Gateway/Auth/auth-reset-password.yaml'
   /auth/change-password:
     $ref: './Gateway/Auth/auth-change-password.yaml'
+  /dashboard/employees/count:
+    $ref: './Gateway/Dashboard/dashboard-employees-count.yaml'
+  /dashboard/faskes/count:
+    $ref: './Gateway/Dashboard/dashboard-faskes-count.yaml'
+  /dashboard/employees/chart:
+    $ref: './Gateway/Dashboard/dashboard-employees-chart.yaml'
   /diagnoses:
     $ref: './Gateway/Diagnose/diagnoses.yaml'
   /employees:
