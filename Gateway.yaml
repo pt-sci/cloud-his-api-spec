@@ -28,8 +28,8 @@ tags:
     description: Operation about diagnose
   - name: employee
     description: Operation about employee
-  - name: entity
-    description: Operation about entity
+  - name: faskes
+    description: Operation about faskes
   - name: medical notes
     description: Operation about medical notes
   - name: organization
@@ -60,8 +60,8 @@ paths:
     $ref: './Gateway/Appointment/appointment-id-cancel.yaml'
   /appointment/{id}/reschedule:
     $ref: './Gateway/Appointment/appointment-id-reschedule.yaml'
-  /auth/check-role-entity/{id}:
-    $ref: './Gateway/Auth/auth-check-role-entity.yaml'
+  /auth/check-role-faskes/{id}:
+    $ref: './Gateway/Auth/auth-check-role-faskes.yaml'
   /auth/send-reset-password:
     $ref: './Gateway/Auth/auth-send-reset-password.yaml'
   /auth/reset-password:
@@ -72,6 +72,8 @@ paths:
     $ref: './Gateway/Dashboard/dashboard-employees-count.yaml'
   /dashboard/faskes/count:
     $ref: './Gateway/Dashboard/dashboard-faskes-count.yaml'
+  /dashboard/patient/chart:
+    $ref: './Gateway/Dashboard/dashboard-patient-chart.yaml'
   /dashboard/employees/chart:
     $ref: './Gateway/Dashboard/dashboard-employees-chart.yaml'
   /diagnoses:
@@ -82,9 +84,9 @@ paths:
     $ref: './Gateway/Employees/employee.yaml'
   /employee/{id}:
     $ref: './Gateway/Employees/employee-id.yaml'
-  /employee/entities-of/{employee}:
-    $ref: './Gateway/Employees/employee-entity-of-employee.yaml'
-  /employee/assign-to-entity:
+  /employee/faskes-of/{employee}:
+    $ref: './Gateway/Employees/employee-faskes-of-employee.yaml'
+  /employee/assign-to-faskes:
     $ref: './Gateway/Employees/employee-assign-employee.yaml'
   /employee/send-confirmation-link:
     $ref: './Gateway/Employees/employee-send-confirmation-email.yaml'
@@ -102,28 +104,26 @@ paths:
     $ref: './Gateway/Employees/employee-rules-latest.yaml'
   /employee/rules/list:
     $ref: './Gateway/Employees/employee-rules-list.yaml'
-  /employee/remove-entity:
-    $ref: './Gateway/Employees/employee-remove-entity.yaml'
+  /employee/remove-faskes:
+    $ref: './Gateway/Employees/employee-remove-faskes.yaml'
   /employee/cancel-invitation/{id}:
     $ref: './Gateway/Employees/employee-cancel-invitation-id.yaml'
-  /entities:
-    $ref: './Gateway/Entities/entities.yaml'
-  /entities/employees/{id}:
-    $ref: './Gateway/Entities/entities-find-by-employee-id.yaml'
-  /entity:
-    $ref: './Gateway/Entities/entity.yaml'
-  /entity/{id}:
-    $ref: './Gateway/Entities/entity-id.yaml'
-  /entity/change-status/{id}:
-    $ref: './Gateway/Entities/entity-change-status-id.yaml'
-  /entity/upload-logo/{id}:
-    $ref: './Gateway/Entities/entity-upload-logo-id.yaml'
-  /entity/upload-banner/{id}:
-    $ref: './Gateway/Entities/entity-upload-logo-id.yaml'
-  /entity/assign-employee:
-    $ref: './Gateway/Entities/entity-assign-employee.yaml'
-  /entity/remove-employee:
-    $ref: './Gateway/Entities/entity-remove-employee.yaml'
+  /faskes:
+    $ref: './Gateway/Faskes/faskes.yaml'
+  /faskes/employees/{id}:
+    $ref: './Gateway/Faskes/faskes-find-by-employee-id.yaml'
+  /faskes/{id}:
+    $ref: './Gateway/Faskes/faskes-id.yaml'
+  /faskes/change-status/{id}:
+    $ref: './Gateway/Faskes/faskes-change-status-id.yaml'
+  /faskes/upload-logo/{id}:
+    $ref: './Gateway/Faskes/faskes-upload-logo-id.yaml'
+  /faskes/upload-banner/{id}:
+    $ref: './Gateway/Faskes/faskes-upload-logo-id.yaml'
+  /faskes/assign-employee:
+    $ref: './Gateway/Faskes/faskes-assign-employee.yaml'
+  /faskes/remove-employee:
+    $ref: './Gateway/Faskes/faskes-remove-employee.yaml'
   /medical-notes:
     $ref: './Gateway/MedicalNotes/medical-notes.yaml'
   /medical-notes/mrn:
@@ -206,6 +206,14 @@ paths:
     $ref: './Gateway/Registration/registration-discharge.yaml'
   /registration/void:
     $ref: './Gateway/Registration/registration-void.yaml'
+  /registration/{id}/guarantor/history:
+    $ref: './Gateway/Registration/registration-id-guarantor-history.yaml'
+  /registration/{id}/guarantor/change:
+    $ref: './Gateway/Registration/registration-id-guarantor-change.yaml'
+  /registration/{id}/cob/add:
+    $ref: './Gateway/Registration/registration-id-cob-add.yaml'
+  /registration/{id}/cob/remove:
+    $ref: './Gateway/Registration/registration-id-cob-remove.yaml'
   /standard-reference/items/{group}:
     $ref: './Gateway/StandardReferences/standard-reference-items-group.yaml'
   /standard-reference/items/{id}:

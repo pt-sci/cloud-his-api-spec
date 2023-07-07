@@ -1,7 +1,7 @@
 patch:
   tags:
-    - entity
-  description: Update an entity status
+    - registration
+  description: Change guarantor from registration
   parameters:
     - name: id
       in: path
@@ -9,18 +9,19 @@ patch:
       schema:
         type: string
   requestBody:
-    required: true
     content:
       application/json:
         schema:
           type: object
           properties:
-            status:
+            new_guarantor:
               type: string
-              enum:
-                - BUKA
-                - TUTUP
-                - PEMELIHARAAN
+            changed_note:
+              type: string
+            changed_at:
+              type: string
+            changed_by:
+              type: string
   responses:
     "200":
       $ref: "../../responses/200.yaml"

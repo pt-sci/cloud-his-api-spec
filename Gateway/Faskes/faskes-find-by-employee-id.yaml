@@ -1,38 +1,16 @@
 get:
   tags:
-    - entity
-  description: Get all entity with or without filter
+    - faskes
+  description: Find faskes by employee id
   parameters:
-    - name: limit
-      in: query
+    - name: id
+      in: path
       required: true
       schema:
-        type: integer
-    - name: skip
-      in: query
-      required: true
-      schema:
-        type: integer
-    - name: q
-      in: query
-      schema:
         type: string
-      examples:
-        q:
-          summary: an example for search query
-          value: solusi cipta integrasi
-    - name: s
-      description: fieldname=type=value
-      in: query
-      schema:
-        type: string
-      examples:
-        s:
-          summary: an example for filter query
-          value: name=text=solusi cipta integrasi;about=text=perusahaan
   responses:
     "200":
-      description: Succesfully get all entity
+      description: Successfully get faskes by employee id
       content:
         application/json:
           schema:

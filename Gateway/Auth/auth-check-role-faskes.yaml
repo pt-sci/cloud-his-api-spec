@@ -1,7 +1,7 @@
 get:
   tags:
     - auth
-  description: Checking for roles and entity
+  description: Checking for roles and faskes
   requestBody:
     required: true
     content:
@@ -13,7 +13,7 @@ get:
                 type: string
   responses:
     "200":
-      description: Succesfully checking roles and entity
+      description: Succesfully checking roles and faskes
       content:
         application/json:
           schema:

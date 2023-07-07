@@ -1,0 +1,47 @@
+get:
+  tags:
+    - registration
+  description: Get registration change guarantor history
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Successfully get registration change guarantor history
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    registration_id:
+                      type: string
+                    from_guarantor:
+                      type: string
+                    to_guarantor:
+                      type: string
+                    changed_note:
+                      type: string
+                    changed_at:
+                      type: string
+                    changed_by:
+                      type: string
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

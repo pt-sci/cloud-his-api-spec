@@ -2,7 +2,7 @@ type: object
 required:
   - _id
   - standard_reference_id
-  - entity
+  - faskes
   - organization
   - items
 properties:
@@ -10,7 +10,7 @@ properties:
     type: string
   standard_reference_id:
     type: string
-  entity:
+  faskes:
     type: string
   organization:
     type: string

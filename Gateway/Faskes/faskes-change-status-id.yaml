@@ -1,20 +1,26 @@
 patch:
   tags:
-    - employee
-  description: Remove employee from faskes
+    - faskes
+  description: Update an faskes status
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
   requestBody:
-    required: 
+    required: true
     content:
       application/json:
         schema:
           type: object
           properties:
-            employee:
+            status:
               type: string
-            entities:
-              type: array
-              items:
-                type: string
+              enum:
+                - BUKA
+                - TUTUP
+                - PEMELIHARAAN
   responses:
     "200":
       $ref: "../../responses/200.yaml"

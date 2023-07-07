@@ -1,12 +1,12 @@
 type: object
 required:
   - _id
-  - entity
+  - faskes
   - employees
 properties:
   _id:
     type: string
-  entity:
+  faskes:
     type: string
   employees:
     type: array

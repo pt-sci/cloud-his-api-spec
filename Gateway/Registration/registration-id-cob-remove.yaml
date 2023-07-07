@@ -1,0 +1,36 @@
+patch:
+  tags:
+    - registration
+  description: Remove cob to registration
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            guarantor:
+              type: string
+            guarantor_no:
+              type: string
+            method:
+              type: string
+              enum:
+                - PLAFOND
+                - CAKUPAN
+            plafond_amount:
+              type: number
+  responses:
+    "200":
+      $ref: "../../responses/200.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

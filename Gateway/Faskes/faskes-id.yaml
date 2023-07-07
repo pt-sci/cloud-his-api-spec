@@ -1,7 +1,7 @@
 get:
   tags:
-    - entity
-  description: Get an entity by id
+    - faskes
+  description: Get an faskes by id
   parameters:
     - name: id
       in: path
@@ -10,7 +10,7 @@ get:
         type: string
   responses:
     "200":
-      description: Successfully get an entity
+      description: Successfully get an faskes
       content:
         application/json:
           schema:
@@ -30,8 +30,8 @@ get:
       $ref: "../../responses/500.yaml"
 put:
   tags:
-    - entity
-  description: Get an entity by id
+    - faskes
+  description: Get an faskes by id
   parameters:
     - name: id
       in: path

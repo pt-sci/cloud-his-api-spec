@@ -1,7 +1,7 @@
 patch:
   tags:
     - employee
-  description: Assign an employee to entity
+  description: Assign an employee to faskes
   requestBody:
     required: true
     content:
@@ -11,7 +11,7 @@ patch:
           properties:
             employee:
               type: string
-            entities:
+            faskes:
               type: array
               items:
                 type: string

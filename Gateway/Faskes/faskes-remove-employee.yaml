@@ -1,7 +1,7 @@
 patch:
   tags:
-    - entity
-  description: Assign employee to an entity
+    - faskes
+  description: Remove employee from faskes
   requestBody:
     required: true
     content: 

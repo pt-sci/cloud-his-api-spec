@@ -43,7 +43,7 @@ properties:
     $ref: '../sub-schemas/EntityWarehouse.yaml'
   medical:
     $ref: '../sub-schemas/EntityMedical.yaml'
-  entityemployees:
+  faskesemployees:
     $ref: '../schemas/EntityEmployee.yaml'
   using_template:
     type: array
