@@ -1,9 +1,9 @@
 type: object
 required:
-  - entity
+  - faskes
   - employees
 properties:
-  entity:
+  faskes:
     type: string
   employees:
     type: array

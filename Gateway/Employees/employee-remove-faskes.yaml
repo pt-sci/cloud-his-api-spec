@@ -1,21 +1,20 @@
 patch:
   tags:
-    - entity
-  description: Upload an image for entity banner
-  parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: string
+    - employee
+  description: Remove employee from faskes
   requestBody:
+    required: 
     content:
       application/json:
         schema:
           type: object
           properties:
-            file:
+            employee:
               type: string
+            faskes:
+              type: array
+              items:
+                type: string
   responses:
     "200":
       $ref: "../../responses/200.yaml"

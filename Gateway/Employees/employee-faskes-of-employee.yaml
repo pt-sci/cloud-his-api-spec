@@ -1,16 +1,16 @@
 get:
   tags:
-    - entity
-  description: Find entities by employee id
-  parameters:
-    - name: id
+    - employee
+  description: Get faskes of employee
+  parameters: 
+    - name: employee
       in: path
       required: true
       schema:
         type: string
-  responses:
+  responses: 
     "200":
-      description: Successfully get entities by employee id
+      description: Successfully get faskes of employee
       content:
         application/json:
           schema:
@@ -28,7 +28,7 @@ get:
                   rows:
                     type: array
                     items:
-                      $ref: "../../schemas/EntitiesGateway.yaml"
+                      $ref: "../../schemas/Entities.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":

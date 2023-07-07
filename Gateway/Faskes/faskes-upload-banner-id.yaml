@@ -1,7 +1,7 @@
 patch:
   tags:
-    - entity
-  description: Upload an image for entity logo
+    - faskes
+  description: Upload an image for faskes banner
   parameters:
     - name: id
       in: path

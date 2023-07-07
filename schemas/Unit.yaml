@@ -28,11 +28,11 @@ properties:
     type: object
     required:
       - organization
-      - entities
+      - faskes
     properties:
       organization:
         type: string
-      entities:
+      faskes:
         $ref: ./Entities.yaml
   location:
     type: object

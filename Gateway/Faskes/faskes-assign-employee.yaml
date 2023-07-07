@@ -1,16 +1,16 @@
-post:
+patch:
   tags:
-    - entity
-  description: Create an entity
+    - faskes
+  description: Assign employee to an faskes
   requestBody:
     required: true
-    content:
+    content: 
       application/json:
         schema:
-          $ref: "../../schemas/EntitiesPost.yaml"
+          $ref: "../../schemas/EntityEmployeePost.yaml"
   responses:
-    "201":
-      $ref: "../../responses/201.yaml"
+    "200":
+      $ref: "../../responses/200.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":

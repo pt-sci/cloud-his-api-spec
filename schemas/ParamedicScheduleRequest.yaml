@@ -12,9 +12,11 @@ properties:
   date:
     type: string
   time:
-    type: object
-    properties:
-      start:
-        type: string
-      end:
-        type: string
+    type: array
+    items:
+      type: object
+      properties:
+        start:
+          type: string
+        end:
+          type: string

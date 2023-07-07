@@ -41,7 +41,7 @@ properties:
       - STAFF
   type:
     type: string
-  entities:
+  faskes:
     type: array
     items:
       type: string
