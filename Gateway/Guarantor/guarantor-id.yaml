@@ -1,7 +1,7 @@
 get:
   tags:
-    - faskes
-  description: Get an faskes by id
+    - guarantor
+  description: Get one guarantor
   parameters:
     - name: id
       in: path
@@ -10,7 +10,7 @@ get:
         type: string
   responses:
     "200":
-      description: Successfully get a faskes
+      description: Successfully get a guarantor
       content:
         application/json:
           schema:
@@ -21,7 +21,7 @@ get:
               message:
                 type: string
               data:
-                $ref: "../../schemas/EntitiesGateway.yaml"
+                $ref: "../../schemas/Guarantor.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":
@@ -30,8 +30,8 @@ get:
       $ref: "../../responses/500.yaml"
 put:
   tags:
-    - faskes
-  description: Get an faskes by id
+    - guarantor
+  description: Update guarantor
   parameters:
     - name: id
       in: path
@@ -43,7 +43,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: "../../schemas/Entities.yaml"
+          $ref: '../../schemas/GuarantorPost.yaml'
   responses:
     "200":
       $ref: "../../responses/200.yaml"
@@ -53,3 +53,5 @@ put:
       $ref: "../../responses/403.yaml"
     "500":
       $ref: "../../responses/500.yaml"
+
+  

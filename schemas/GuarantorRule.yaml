@@ -1,0 +1,25 @@
+type: object
+properties:
+  _id: 
+    type: string
+  guarantor_id: 
+    type: string
+  type:
+    type: string
+    enum:
+      - ITEM TYPE RULE
+      - ITEM RULE
+      - ITEM PRESCRIPTION RULE
+      - SERVICE UNIT RULE
+  items:
+    type: array
+    items:
+      type: object
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  last_updated_at: 
+    type: string
+  last_updated_by: 
+    type: string

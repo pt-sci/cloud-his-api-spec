@@ -1,0 +1,32 @@
+get:
+  tags:
+    - faskes
+  description: get warehouse's depot
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Successfully get all warehouse's depot
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: array
+                items:
+                  $ref: '../../schemas/Depot.yaml'
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

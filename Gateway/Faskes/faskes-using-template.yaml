@@ -1,0 +1,28 @@
+patch:
+  tags:
+    - faskes
+  description: Use a template to faskes
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            type:
+              type: string
+              enum: [FORM_REGIS_PASIEN, NOTES, SERVICE_UNIT]
+            template_id:
+              type: string
+            faskes:
+              type: array
+              items:
+                type: string
+  responses:
+    "201":
+      $ref: "../../responses/201.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

@@ -1,0 +1,39 @@
+get:
+  tags:
+    - guarantor
+  description: Get guarantor detail
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Successfully get guarantor detail
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: object
+                properties:
+                  rule:
+                    type: array
+                    items:
+                      $ref: '../../schemas/GuarantorRule.yaml'
+                  restriction:
+                    type: array
+                    items:
+                      $ref: '../../schemas/GuarantorRestriction.yaml'
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"
