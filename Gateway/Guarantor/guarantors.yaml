@@ -1,7 +1,7 @@
 get:
   tags:
-    - faskes
-  description: Get all faskes with or without filter
+    - guarantor
+  description: Get all guarantor with or without filter
   parameters:
     - name: limit
       in: query
@@ -32,7 +32,7 @@ get:
           value: name=text=solusi cipta integrasi;about=text=perusahaan
   responses:
     "200":
-      description: Succesfully get all faskes
+      description: Succesfully get all guarantors
       content:
         application/json:
           schema:
@@ -50,26 +50,7 @@ get:
                   rows:
                     type: array
                     items:
-                      $ref: "../../schemas/EntitiesGateway.yaml"
-    "401":
-      $ref: "../../responses/401.yaml"
-    "403":
-      $ref: "../../responses/403.yaml"
-    "500":
-      $ref: "../../responses/500.yaml"
-post:
-  tags:
-    - faskes
-  description: Create an faskes
-  requestBody:
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: "../../schemas/EntitiesPost.yaml"
-  responses:
-    "201":
-      $ref: "../../responses/201.yaml"
+                      $ref: "../../schemas/Guarantor.yaml"
     "401":
       $ref: "../../responses/401.yaml"
     "403":

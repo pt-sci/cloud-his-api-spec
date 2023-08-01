@@ -1,0 +1,72 @@
+type: object
+properties:
+  _id:
+    type: string
+  name:
+    type: string
+  address:
+    $ref: '../sub-schemas/Address.yaml'
+  contact:
+    type: array
+    items:
+      $ref: '../sub-schemas/Contact.yaml'
+  short_name:
+    type: string
+  type:
+    type: string
+    enum:
+      - PRIBADI
+      - ASURANSI
+      - KORPORASI
+  is_header_guarantor:
+    type: boolean
+  header_guarantor:
+    type: string
+  description:
+    type: string
+  contract:
+    type: object
+    properties:
+      start:
+        type: string
+      end:
+        type: string
+  is_active:
+    type: boolean
+  method:
+    type: string
+    enum:
+      - PLAFOND
+      - COVERAGE
+  is_include_item_medical: 
+    type: boolean
+  is_include_item_non_medical: 
+    type: boolean
+  is_include_item_optic: 
+    type: boolean
+  is_cover_inpatient: 
+    type: boolean
+  is_cover_outpatient: 
+    type: boolean
+  inpatient_amount_value: 
+    type: number
+  outpatient_amount_value: 
+    type: number
+  emergency_amount_value: 
+    type: number
+  item_rule:
+    type: array
+    items:
+      $ref: './GuarantorRule.yaml'
+  item_restriction:
+    type: array
+    items:
+      $ref: './GuarantorRestriction.yaml'
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  last_updated_at:  
+    type: string
+  last_updated_by: 
+    type: string

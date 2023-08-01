@@ -1,0 +1,26 @@
+type: object
+properties:
+  _id:
+    type: string
+  faskes: 
+    type: string
+  name: 
+    type: string
+  status: 
+    type: string
+  type: 
+    type: string
+  created_at:
+    type: string
+  created_by: 
+    type: string
+  last_updated_at:
+    type: string
+  last_updated_by:
+    type: string
+  is_void: 
+    type: boolean
+  void_at:
+    type: string
+  void_by:
+    type: string

@@ -30,6 +30,8 @@ tags:
     description: Operation about employee
   - name: faskes
     description: Operation about faskes
+  - name: guarantor
+    description: Operation about guarantor
   - name: medical notes
     description: Operation about medical notes
   - name: organization
@@ -120,10 +122,34 @@ paths:
     $ref: './Gateway/Faskes/faskes-upload-logo-id.yaml'
   /faskes/upload-banner/{id}:
     $ref: './Gateway/Faskes/faskes-upload-logo-id.yaml'
-  /faskes/assign-employee:
+  /faskes/assign:
     $ref: './Gateway/Faskes/faskes-assign-employee.yaml'
-  /faskes/remove-employee:
+  /faskes/employee/remove:
     $ref: './Gateway/Faskes/faskes-remove-employee.yaml'
+  /faskes/using_template:
+    $ref: './Gateway/Faskes/faskes-using-template.yaml'
+  /faskes/warehouse/{id}:
+    $ref: './Gateway/Faskes/faskes-warehouse-id.yaml'
+  /faskes/warehouse:
+    $ref: './Gateway/Faskes/faskes-warehouse.yaml'
+  /faskes/warehouse/share:
+    $ref: './Gateway/Faskes/faskes-warehouse-share.yaml'
+  /faskes/warehouse/void/{id}:
+    $ref: './Gateway/Faskes/faskes-warehouse-void.yaml'
+  /faskes/warehouse/depot/{id}:
+    $ref: './Gateway/Faskes/faskes-warehouse-depot-id.yaml'
+  /faskes/warehouse/depot:
+    $ref: './Gateway/Faskes/faskes-warehouse-depot.yaml'
+  /faskes/warehouse/depot/void/{id}:
+    $ref: './Gateway/Faskes/faskes-warehouse-depot-void-id.yaml'
+  /guarantors:
+    $ref: './Gateway/Guarantor/guarantors.yaml'
+  /guarantor/{id}:
+    $ref: './Gateway/Guarantor/guarantor-id.yaml'
+  /guarantor/detail/{id}:
+    $ref: './Gateway/Guarantor/guarantor-detail-id.yaml'
+  /guarantor:
+    $ref: './Gateway/Guarantor/guarantor.yaml'
   /medical-notes:
     $ref: './Gateway/MedicalNotes/medical-notes.yaml'
   /medical-notes/mrn:

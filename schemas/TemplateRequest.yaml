@@ -12,12 +12,3 @@ properties:
       - FORM_REGIS_PASIEN
   value:
     type: object
-    properties:
-      required:
-        type: array
-        items:
-          type: string
-      optional:
-        type: array
-        items:
-          type: string

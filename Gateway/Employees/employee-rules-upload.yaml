@@ -2,6 +2,17 @@ post:
   tags:
     - employee
   description: Upload rules
+  parameters:
+    - name: platform
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: view
+      in: query
+      required: true
+      schema:
+        type: string
   requestBody:
     content:
       application/json:

@@ -1,13 +1,13 @@
 type: object
 required:
   - street
-  - subdistrict
+  - sub_district
   - district
   - city
 properties:
   street:
     type: string
-  subdistrict:
+  sub_district:
     type: string
   district: 
     type: string

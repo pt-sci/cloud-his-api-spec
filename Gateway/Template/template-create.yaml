@@ -8,6 +8,52 @@ post:
       application/json:
         schema:
           $ref: "../../schemas/TemplateRequest.yaml"
+        examples:
+          FORM:
+            value:
+              name: FORM REGISTRASI PASIEN
+              type: FORM_REGIS_PASIEN
+              value: {
+                required: ["spouse_name", "father_name"],
+                optional: ["mother_name", "passport_no", "temp_address"]
+              }
+          SERVICE_UNIT:
+            value:
+              name: DOKTER GIGI
+              type: SERVICE_UNIT
+              value: {
+                specialist: [
+                  { "Gigi Anak": [64a3cf7f24575b5d6d293fbf] }, 
+                  {"Gigi Dewasa": [
+                    64a3cf7f24575b5d6d293fbf, 
+                    64a3de1524575b5d6d293fc6
+                    ]
+                  }
+                ]
+              }
+          SOAPE:
+            value:
+              name: SOAPE GIGI UMUM
+              type: SOAPE
+              value: {
+                subjective: [
+                  64a3ce3e4c0311e991ae74f9,
+                  64a3ce3e4c0311e991ae74fa
+                ],
+                objective: [
+                  64a3cea44c0311e991ae74fc
+                ],
+                assessment: [
+                  64a3ceb34c0311e991ae74fd
+                ],
+                planning: [
+                  64a3ceb34c0311e991ae74fd
+                ],
+                evaluation: [
+                  64a3ceb34c0311e991ae74fd,
+                  64a3ce3e4c0311e991ae74fa
+                ]
+              }
   responses:
     "201":
       $ref: "../../responses/201.yaml"

@@ -1,0 +1,23 @@
+type: object
+properties:
+  _id: 
+    type: string
+  guarantor_id: 
+    type: string
+  items:
+    type: array
+    items:
+      type: object
+      properties:
+        unique_id:
+          type: string
+        name:
+          type: string
+  created_at: 
+    type: string
+  created_by: 
+    type: string
+  last_updated_at: 
+    type: string
+  last_updated_by: 
+    type: string
