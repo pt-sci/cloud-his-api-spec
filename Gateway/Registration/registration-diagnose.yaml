@@ -1,3 +1,43 @@
+get:
+  tags:
+    - registration
+  description: Get all registration diagnose
+  parameters:
+    - name: registration_no
+      in: query
+      required: true
+      schema:
+        type: string
+    - name: q
+      in: query
+      schema:
+        type: string
+      examples:
+        q:
+          summary: an example for search query
+          value: solusi cipta integrasi
+  responses:
+    "200":
+      description: "Successfully get registration diagnose(s)"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: number
+              message:
+                type: string
+              data:
+                type: array
+                items:
+                  $ref: "../../schemas/RegistrationDiagnose.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"
 post:
   tags:
     - registration

@@ -22,7 +22,8 @@ properties:
       - KOMPLIKASI
       - SEKUNDER
       - LAIN-LAIN
-  is_void: boolean
+  is_void: 
+    type: boolean
   created_at: 
     type: string
   created_by: 

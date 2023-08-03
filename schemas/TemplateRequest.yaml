@@ -10,5 +10,7 @@ properties:
     type: string
     enum:
       - FORM_REGIS_PASIEN
+  is_active:
+    type: boolean
   value:
     type: object
