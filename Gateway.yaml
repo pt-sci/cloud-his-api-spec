@@ -220,10 +220,14 @@ paths:
     $ref: './Gateway/Registration/registration-start-service.yaml'
   /registration/diagnose:
     $ref: './Gateway/Registration/registration-diagnose.yaml'
+  /registration/diagnose/{id}:
+    $ref: './Gateway/Registration/registration-diagnose-id.yaml'
   /registration/medical-note:
     $ref: './Gateway/Registration/registration-medical-note.yaml'
   /registration/prescription:
     $ref: './Gateway/Registration/registration-prescription.yaml'
+  /registration/prescription/{id}:
+    $ref: './Gateway/Registration/registration-prescription-id.yaml'
   /registration/end-service:
     $ref: './Gateway/Registration/registration-end-service.yaml'
   /registration/cancel:
