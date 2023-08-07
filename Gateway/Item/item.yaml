@@ -1,0 +1,149 @@
+post:
+  tags:
+    - item
+  description: Create item
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/Item.yaml'
+        examples:
+          MEDICAL:
+            value:
+              _id: DAP0001.00002
+              item_group_id: KIT.DAP0001
+              name: OBAT KURAP
+              category: MEDICAL
+              detail: {
+                product_type: SALEP,
+                class: A,
+                brand_name: obat cocol,
+                item_unit: AMPUL,
+                purchase_unit: BOX,
+                fabric: orang tua,
+                conversion_factor: 12,
+                zat_active: [
+                  kuku kudanil 2ml
+                ],
+                dosage: 3,
+                dosage_unit: TETES,
+                notes: aman untuk bayi diatas 2 hari,
+                drug_type: {
+                  formularium: true,
+                  national_formularium: true,
+                  generic: true,
+                  non_generic: false,
+                  precursor: true,
+                  non_generic_limited: true,
+                },
+                drug_classification: {
+                  otc: true,
+                  hard_drug: false,
+                  ham: false,
+                  narcotic: true,
+                  morphine: true,
+                  pethidine: true,
+                  lasa: false,
+                  traditional_medicine: false,
+                  supplement: false,
+                  antibiotic: true
+                },
+                item_flag: {
+                  inventory_item: false,
+                  production_item: false,
+                  consignment: false,
+                  control_exp: false,
+                  actual_deduct: false
+                },
+                drug_label: OBAT LUAR,
+                sales_fixed_price: 5000,
+                margin_percentage: 300,
+                margin: string,
+                price_in_purchase_unit: 2500,
+                price_in_base_unit: 1500,
+                price_in_base_unit_wvat: 4500,
+                highest_price_in_base_unit: 6000,
+                cost_price: 200,
+                purchase_discount_1: 3900,
+                purchase_discount_2: 4000,
+                sales_discount: 300
+              }
+              created_at: '2023-08-03T16:49:27.129Z'
+              created_by: 6v7P2wC9ZUT49wFT1arugPCTUdB2
+          NON MEDICAL:
+            value:
+              _id: COD0002.00001
+              item_group_id: RAD.COD0002
+              name: MESIN SUNAT
+              category: NON MEDICAL
+              is_active: true
+              detail: {
+                product_type: MESIN,
+                class: A,
+                item_unit: AMPUL,
+                purchase_unit: DUS,
+                fabric: orang tua,
+                conversion_factor: 120,
+                notes: aman untuk bayi yang belum lahir,
+                item_flag: {
+                  inventory_item: false,
+                  production_item: true,
+                  consignment: true,
+                  control_exp: false,
+                  actual_deduct: false
+                },
+                sales_fixed_price: 10000,
+                margin_percentage: 1000,
+                margin: string,
+                price_in_purchase_unit: 5500,
+                price_in_base_unit: 8500,
+                price_in_base_unit_wvat: 6500,
+                highest_price_in_base_unit: 6000,
+                cost_price: 200,
+                purchase_discount_1: 8000,
+                purchase_discount_2: 7000,
+                sales_discount: 200
+              }
+              created_at: "2023-08-04T10:31:12.334Z"
+              created_by: 6v7P2wC9ZUT49wFT1arugPCTUdB2
+          KITCHEN:
+            value:
+              _id: DAP0001.00001
+              item_group_id: KIT.DAP0001
+              name: Sendok Soup Kalajengking
+              category: KITCHEN
+              is_active: true
+              detail: {
+                class: b,
+                item_unit: AMPUL,
+                purchase_unit: BOX,
+                conversion_factor: 12,
+                notes: aman untuk bayi diatas 2 hari,
+                item_flag: {
+                  inventory_item: true,
+                  production_item: false,
+                  control_exp: false
+                },
+                sales_fixed_price: 10000,
+                margin_percentage: 1000,
+                margin: string,
+                price_in_purchase_unit: 5500,
+                price_in_base_unit: 8500,
+                price_in_base_unit_wvat: 6500,
+                highest_price_in_base_unit: 6000,
+                cost_price: 200,
+                purchase_discount_1: 8000,
+                purchase_discount_2: 7000
+              }
+              created_at: "2023-08-04T10:31:12.334Z"
+              created_by: 6v7P2wC9ZUT49wFT1arugPCTUdB2
+  responses:
+    "201":
+      $ref: "../../responses/201.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

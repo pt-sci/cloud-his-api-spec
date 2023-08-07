@@ -32,6 +32,10 @@ tags:
     description: Operation about faskes
   - name: guarantor
     description: Operation about guarantor
+  - name: item
+    description: Operation about item
+  - name: item group
+    description: Operation about item group
   - name: medical notes
     description: Operation about medical notes
   - name: organization
@@ -150,6 +154,22 @@ paths:
     $ref: './Gateway/Guarantor/guarantor-detail-id.yaml'
   /guarantor:
     $ref: './Gateway/Guarantor/guarantor.yaml'
+  /items:
+    $ref: './Gateway/Item/items.yaml'
+  /item:
+    $ref: './Gateway/Item/item.yaml'
+  /item/{id}:
+    $ref: './Gateway/Item/item-id.yaml'
+  /item/deactive/{id}:
+    $ref: './Gateway/Item/item-deactive-id.yaml'
+  /item_groups:
+    $ref: './Gateway/ItemGroup/item-groups.yaml'
+  /item_group:
+    $ref: './Gateway/ItemGroup/item-group.yaml'
+  /item_group/{id}:
+    $ref: './Gateway/ItemGroup/item-group-id.yaml'
+  /item_group/deactive/{id}:
+    $ref: './Gateway/ItemGroup/item-group-deactive-id.yaml'
   /medical-notes:
     $ref: './Gateway/MedicalNotes/medical-notes.yaml'
   /medical-notes/mrn:
