@@ -1,0 +1,28 @@
+type: object
+required: 
+  - name
+  - category
+  - is_active
+  - initial
+  - created_at
+  - created_by
+properties:
+  _id:
+    type: string
+  name:
+    type: string
+  category:
+    type: string
+    enum: ['SERVICE', 'MEDICAL', 'NON MEDICAL', 'LABORATORY', 'RADIOLOGY', 'DIAGNOSTIC', 'OPTIC', 'KITCHEN']
+  is_active:
+    type: boolean
+  initial:
+    type: string
+  created_at:
+    type: string
+  created_by:
+    type: string
+  last_updated_at:
+    type: string
+  last_updated_by:
+    type: string

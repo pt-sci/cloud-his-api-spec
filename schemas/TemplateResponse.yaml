@@ -13,6 +13,8 @@ properties:
     type: string
     enum:
       - FORM_REGIS_PASIEN
+      - SERVICE UNIT
+      - NOTES
   is_active:
     type: boolean
   value:
