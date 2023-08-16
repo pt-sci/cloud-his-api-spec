@@ -36,6 +36,8 @@ tags:
     description: Operation about item
   - name: item group
     description: Operation about item group
+  - name: item margin
+    description: Operation about item margin
   - name: medical notes
     description: Operation about medical notes
   - name: organization
@@ -170,6 +172,12 @@ paths:
     $ref: './Gateway/ItemGroup/item-group-id.yaml'
   /item_group/deactive/{id}:
     $ref: './Gateway/ItemGroup/item-group-deactive-id.yaml'
+  /item-margins:
+    $ref: './Gateway/ItemMargin/item-margins.yaml'
+  /item-margin:
+    $ref: './Gateway/ItemMargin/item-margin.yaml'
+  /item-margin/{_id}:
+    $ref: './Gateway/ItemMargin/item-margin-id.yaml'
   /medical-notes:
     $ref: './Gateway/MedicalNotes/medical-notes.yaml'
   /medical-notes/mrn:

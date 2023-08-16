@@ -16,6 +16,10 @@ properties:
     type: string
   registration_type: 
     type: string
+    enum:
+      - RAWAT JALAN
+      - RAWAT INAP
+      - IGD
   date: 
     type: string
   sep: 

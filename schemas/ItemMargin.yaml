@@ -1,0 +1,52 @@
+type: object
+required:
+  - _id
+  - name
+  - values
+  - created_at
+  - created_by
+properties:
+  _id:
+    type: string
+  name:
+    type: string
+  values:
+    type: array
+    items:
+      type: object
+      properties:
+        starting_value:
+          type: number
+        ending_value:
+          type: number
+        global_margin_percentage:
+          type: number
+        op_margin_percentage:
+          type: number
+        is_op_with_ppn:
+          type: boolean
+        ip_global_margin_percentage:
+          type: number
+        is_ip_with_ppn:
+          type: boolean
+        ip_detailed_margin_percentage:
+          type: array
+          items:
+            type: object
+            properties:
+              class:
+                type: string
+              margin_percentage:
+                type: number
+        otc_margin_percentage:
+          type: number
+        is_otc_with_ppn:
+          type: boolean
+  created_at:
+    type: date
+  created_by:
+    type: string
+  last_updated_at:
+    type: date
+  last_updated_by:
+    type: string

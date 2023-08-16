@@ -1,0 +1,95 @@
+put:
+  tags:
+    - item margin
+  description: Update an item margin
+  parameters:
+    - name: _id
+      in: params
+      required: true
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/ItemMarginRequest.yaml'
+        examples:
+          GLOBAL:
+            value:
+              name: "MARGIN FARMASI"
+              values: [
+                {
+                  starting_value: 0,
+                  ending_value: 999999999999,
+                  global_margin_percentage: 25,
+                  is_global_with_ppn: false,
+                  op_margin_percentage: 0,
+                  is_op_with_ppn: false,
+                  ip_global_margin_percentage: 0,
+                  is_ip_with_ppn: false,
+                  ip_detailed_margin_percentage: [],
+                  em_margin_percentage: 0,
+                  is_em_with_ppn: false,
+                  otc_margin_percentage: 0,
+                  is_otc_with_ppn: false
+                }
+              ]
+          NON-GLOBAL (WITH GLOBAL IP):
+            value:
+              name: "MARGIN FARMASI"
+              values: [
+                {
+                  starting_value: 0,
+                  ending_value: 999999999999,
+                  global_margin_percentage: 0,
+                  is_global_with_ppn: false,
+                  op_margin_percentage: 22,
+                  is_op_with_ppn: false,
+                  ip_global_margin_percentage: 25,
+                  is_ip_with_ppn: false,
+                  ip_detailed_margin_percentage: [],
+                  em_margin_percentage: 22,
+                  is_em_with_ppn: false,
+                  otc_margin_percentage: 21,
+                  is_otc_with_ppn: false
+                }
+              ]
+          NON-GLOBAL (WITH DETAILED IP):
+            value:
+              name: "MARGIN FARMASI"
+              values: [
+                {
+                  starting_value: 0,
+                  ending_value: 999999999999,
+                  global_margin_percentage: 0,
+                  is_global_with_ppn: false,
+                  op_margin_percentage: 22,
+                  is_op_with_ppn: false,
+                  ip_global_margin_percentage: 0,
+                  is_ip_with_ppn: false,
+                  ip_detailed_margin_percentage: [
+                    {
+                      class: "01",
+                      margin_percentage: 20
+                    },
+                    {
+                      class: "01A",
+                      margin_percentage: 20
+                    }
+                  ],
+                  em_margin_percentage: 22,
+                  is_em_with_ppn: false,
+                  otc_margin_percentage: 21,
+                  is_otc_with_ppn: false
+                }
+              ]
+  responses:
+    "200":
+      $ref: "../../responses/200.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"
