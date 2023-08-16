@@ -81,40 +81,40 @@ properties:
             type: array
             items:
               type: string
-        emergency_contact:
-          type: object
-          properties:
-            name: 
+      emergency_contact:
+        type: object
+        properties:
+          name: 
+            type: string
+          ssn: 
+            type: string
+          relation: 
+            type: string
+          email: 
+            type: string
+          phone_number: 
+            type: array
+            items:
               type: string
-            ssn: 
-              type: string
-            relation: 
-              type: string
-            email: 
-              type: string
-            phone_number: 
-              type: array
-              items:
-                type: string
-        status:
-          type: object
-          properties:
-            is_blacklisted: 
-              type: boolean
-            is_alive: 
-              type: boolean
-            blacklisted_at: 
-              type: string
-            whitelisted_at: 
-              type: string
-            deceased_at: 
-              type: string
-        notes: 
-          type: string
-        guarantor:
-          type: string
-        guarantor_no: 
-          type: string
+      status:
+        type: object
+        properties:
+          is_blacklisted: 
+            type: boolean
+          is_alive: 
+            type: boolean
+          blacklisted_at: 
+            type: string
+          whitelisted_at: 
+            type: string
+          deceased_at: 
+            type: string
+      notes: 
+        type: string
+      guarantor:
+        type: string
+      guarantor_no: 
+        type: string
   patient_status: 
     type: boolean
   created_at: 
