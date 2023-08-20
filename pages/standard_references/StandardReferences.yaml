@@ -1,0 +1,29 @@
+openapi: "3.0.2"
+info:
+  title: Cloud HIS Gateway
+  version: "1.0"
+  description: API Gateway for HIS platform
+
+servers:
+  - url: https://cloud-his-gateway-production.up.railway.app/
+
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerToken: []
+
+tags:
+  - name: standard references
+
+paths:
+  /standard-reference/items/{group}:
+    $ref: '../../Gateway/StandardReferences/standard-reference-items-group.yaml'
+  /standard-reference/items/{id}:
+    $ref: '../../Gateway/StandardReferences/standard-reference-items-create.yaml' 
+  /standard-reference/item/{id}:
+    $ref: '../../Gateway/StandardReferences/standard-reference-item-update.yaml'

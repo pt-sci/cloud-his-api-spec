@@ -4,6 +4,7 @@ required:
   - mrn
   - ssn
   - name
+  - gender
   - religion
   - occupation
   - education
@@ -34,6 +35,12 @@ properties:
         type: string
       suffix: 
         type: string
+  gender:
+    type: string
+    enum:
+      - LAKI-LAKI
+      - PEREMPUAN
+      - LAINNYA
   religion:
     type: string
     enum: 
@@ -115,6 +122,10 @@ properties:
         type: string
       guarantor_no: 
         type: string
+      allergic:
+        type: array
+        items:
+          type: string
   patient_status: 
     type: boolean
   created_at: 

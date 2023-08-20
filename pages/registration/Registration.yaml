@@ -1,0 +1,57 @@
+openapi: "3.0.2"
+info:
+  title: Cloud HIS Gateway
+  version: "1.0"
+  description: API Gateway for HIS platform
+
+servers:
+  - url: https://cloud-his-gateway-production.up.railway.app/
+
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerToken: []
+
+tags:
+  - name: registration
+
+paths:
+  /registrations:
+    $ref: '../../Gateway/Registration/registrations.yaml'
+  /registration:
+    $ref: '../../Gateway/Registration/registration.yaml'
+  /registration/{id}:
+    $ref: '../../Gateway/Registration/registration-id.yaml'
+  /registration/confirm-arrival:
+    $ref: '../../Gateway/Registration/registration-confirm-arrival.yaml'
+  /registration/start-service:
+    $ref: '../../Gateway/Registration/registration-start-service.yaml'
+  /registration/diagnose:
+    $ref: '../../Gateway/Registration/registration-diagnose.yaml'
+  /registration/diagnose/{id}:
+    $ref: '../../Gateway/Registration/registration-diagnose-id.yaml'
+  /registration/medical-note:
+    $ref: '../../Gateway/Registration/registration-medical-note.yaml'
+  /registration/prescription:
+    $ref: '../../Gateway/Registration/registration-prescription.yaml'
+  /registration/prescription/{id}:
+    $ref: '../../Gateway/Registration/registration-prescription-id.yaml'
+  /registration/end-service:
+    $ref: '../../Gateway/Registration/registration-end-service.yaml'
+  /registration/cancel:
+    $ref: '../../Gateway/Registration/registration-cancel.yaml'
+  /registration/discharge:
+    $ref: '../../Gateway/Registration/registration-discharge.yaml'
+  /registration/void:
+    $ref: '../../Gateway/Registration/registration-void.yaml'
+  /registration/{id}/guarantor/history:
+    $ref: '../../Gateway/Registration/registration-id-guarantor-history.yaml'
+  /registration/{id}/guarantor/change:
+    $ref: '../../Gateway/Registration/registration-id-guarantor-change.yaml'
+  /registration/{id}/cob/add:
+    $ref: '../../Gateway/Registration/registration-id-cob-add.yaml'

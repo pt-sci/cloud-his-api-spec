@@ -1,0 +1,35 @@
+openapi: "3.0.2"
+info:
+  title: Cloud HIS Gateway
+  version: "1.0"
+  description: API Gateway for HIS platform
+
+servers:
+  - url: https://cloud-his-gateway-production.up.railway.app/
+
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerToken: []
+
+tags:
+  - name: medical notes
+
+paths:
+  /medical-notes:
+    $ref: '../../Gateway/MedicalNotes/medical-notes.yaml'
+  /medical-notes/mrn:
+    $ref: '../../Gateway/MedicalNotes/medical-notes-mrn.yaml'
+  /medical-notes/uid:
+    $ref: '../../Gateway/MedicalNotes/medical-notes-uid.yaml'
+  /medical-note:
+    $ref: '../../Gateway/MedicalNotes/medical-note.yaml'
+  /medical-note/{id}:
+    $ref: '../../Gateway/MedicalNotes/medical-note-id.yaml'
+  /medical-note/void/{id}:
+    $ref: '../../Gateway/MedicalNotes/medical-note-void-id.yaml'

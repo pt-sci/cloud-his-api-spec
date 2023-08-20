@@ -1,0 +1,31 @@
+openapi: "3.0.2"
+info:
+  title: Cloud HIS Gateway
+  version: "1.0"
+  description: API Gateway for HIS platform
+
+servers:
+  - url: https://cloud-his-gateway-production.up.railway.app/
+
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerToken: []
+
+tags:
+  - name: guarantor
+
+paths:
+  /guarantors:
+    $ref: '../../Gateway/Guarantor/guarantors.yaml'
+  /guarantor/{id}:
+    $ref: '../../Gateway/Guarantor/guarantor-id.yaml'
+  /guarantor/detail/{id}:
+    $ref: '../../Gateway/Guarantor/guarantor-detail-id.yaml'
+  /guarantor:
+    $ref: '../../Gateway/Guarantor/guarantor.yaml'

@@ -1,0 +1,23 @@
+type: object
+required:
+  - _id
+  - name
+  - short_name
+  - is_inpatient_class
+  - is_active
+  - is_tariff_class
+properties:
+  _id: 
+    type: string
+  name: 
+    type: string
+  short_name: 
+    type: string
+  is_inpatient_class: 
+    type: boolean
+  is_active: 
+    type: boolean
+  is_tariff_class: 
+    type: boolean
+  class_rl: 
+    type: string
