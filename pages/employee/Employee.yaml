@@ -1,0 +1,53 @@
+openapi: "3.0.2"
+info:
+  title: Cloud HIS Gateway
+  version: "1.0"
+  description: API Gateway for HIS platform
+
+servers:
+  - url: https://cloud-his-gateway-production.up.railway.app/
+
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerToken: []
+
+tags:
+  - name: employee
+
+paths:
+  /employees:
+    $ref: '../../Gateway/Employees/employees.yaml'
+  /employee:
+    $ref: '../../Gateway/Employees/employee.yaml'
+  /employee/{id}:
+    $ref: '../../Gateway/Employees/employee-id.yaml'
+  /employee/faskes-of/{employee}:
+    $ref: '../../Gateway/Employees/employee-faskes-of-employee.yaml'
+  /employee/assign-to-faskes:
+    $ref: '../../Gateway/Employees/employee-assign-employee.yaml'
+  /employee/send-confirmation-link:
+    $ref: '../../Gateway/Employees/employee-send-confirmation-email.yaml'
+  /employee/change-status/{id}:
+    $ref: '../../Gateway/Employees/employee-change-status-id.yaml'
+  /employee/change-status-account/{id}:
+    $ref: '../../Gateway/Employees/employee-change-status-account-id.yaml'
+  /employee/create-account:
+    $ref: '../../Gateway/Employees/employee-create-account.yaml'
+  /employee/create-password:
+    $ref: '../../Gateway/Employees/employee-create-password.yaml'
+  /employee/rules/upload:
+    $ref: '../../Gateway/Employees/employee-rules-upload.yaml'
+  /employee/rules/latest:
+    $ref: '../../Gateway/Employees/employee-rules-latest.yaml'
+  /employee/rules/list:
+    $ref: '../../Gateway/Employees/employee-rules-list.yaml'
+  /employee/remove-faskes:
+    $ref: '../../Gateway/Employees/employee-remove-faskes.yaml'
+  /employee/cancel-invitation/{id}:
+    $ref: '../../Gateway/Employees/employee-cancel-invitation-id.yaml'

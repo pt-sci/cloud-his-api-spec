@@ -108,10 +108,17 @@
 		}
 	</style>
 	<head>
+		<script src="https://unpkg.com/swagger-ui-dist@latest/swagger-ui-bundle.js"></script>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://unpkg.com/swagger-ui-dist@latest/swagger-ui.css"
+		/>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 		/>
+
 		<title>CLOUD-HIS API SPEC</title>
 	</head>
 	<body>
@@ -149,35 +156,45 @@
 						id="myInput"
 						onkeyup="filterFunction()"
 					/>
-					<a href="/">Homepage</a>
-					<a href="./pages/appointment/">Appointment</a>
-					<a href="./pages/auth/">Auth</a>
-					<a href="./pages/class/">Class</a>
-					<a href="./pages/dashboard/">Dashboard</a>
-					<a href="./pages/diagnose/">Diagnose</a>
-					<a href="./pages/employee/">Employee</a>
-					<a href="./pages/faskes/">Faskes</a>
-					<a href="./pages/guarantor/">Guarantor</a>
-					<a href="./pages/item/">Item</a>
-					<a href="./pages/item_group/">Item Group</a>
-					<a href="./pages/item_margin/">Item Margin</a>
-					<a href="./pages/medical_notes/">Medical Notes</a>
-					<a href="./pages/organization/">Organization</a>
-					<a href="./pages/paramedic_leave/">Paramedic Leave</a>
-					<a href="./pages/paramedic_schedule/">Paramedic Schedule</a>
-					<a href="./pages/patient/">Patient</a>
-					<a href="./pages/registration/">Registration</a>
-					<a href="./pages/standard_references/">Standard References</a>
-					<a href="./pages/template/">Template</a>
-					<a href="./pages/zipcode/">Zipcode</a>
+					<a href="../../">Homepage</a>
+					<a href="../appointment/">Appointment</a>
+					<a href="../auth/">Auth</a>
+					<a href="../class/">Class</a>
+					<a href="../dashboard/">Dashboard</a>
+					<a href="../diagnose/">Diagnose</a>
+					<a href="../employee/">Employee</a>
+					<a href="../faskes/">Faskes</a>
+					<a href="../guarantor/">Guarantor</a>
+					<a href="../item/">Item</a>
+					<a href="../item_group/">Item Group</a>
+					<a href="../item_margin/">Item Margin</a>
+					<a href="../medical_notes/">Medical Notes</a>
+					<a href="../organization/">Organization</a>
+					<a href="../paramedic_leave/">Paramedic Leave</a>
+					<a href="../paramedic_schedule/">Paramedic Schedule</a>
+					<a href="../patient/">Patient</a>
+					<a href="../registration/">Registration</a>
+					<a href="../standard_references/">Standard References</a>
+					<a href="../template/">Template</a>
+					<a href="../zipcode/">Zipcode</a>
 				</div>
 			</div>
 		</div>
-		<div class="homepage">
-			<h1>
-				<img src="logo.png" />
-				CLOUD HIS API SPEC
-			</h1>
-		</div>
+		<div id="swagger-ui"></div>
+		<script>
+			window.onload = function () {
+				const ui = SwaggerUIBundle({
+					url: "ItemGroup.yaml",
+					dom_id: "#swagger-ui",
+					deepLinking: true,
+					presets: [
+						SwaggerUIBundle.presets.apis,
+						SwaggerUIBundle.SwaggerUIStandalonePreset,
+					],
+					plugins: [SwaggerUIBundle.plugins.DownloadUrl],
+				});
+				window.ui = ui;
+			};
+		</script>
 	</body>
 </html>

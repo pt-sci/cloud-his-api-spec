@@ -1,0 +1,33 @@
+openapi: "3.0.2"
+info:
+  title: Cloud HIS Gateway
+  version: "1.0"
+  description: API Gateway for HIS platform
+
+servers:
+  - url: https://cloud-his-gateway-production.up.railway.app/
+
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerToken: []
+
+tags:
+  - name: appointment
+
+paths:
+  /appointments:
+    $ref: "../../Gateway/Appointment/appointments.yaml"
+  /appointment:
+    $ref: '../../Gateway/Appointment/appointment.yaml'
+  /appointment/{id}:
+    $ref: '../../Gateway/Appointment/appointment-id.yaml'
+  /appointment/{id}/cancel:
+    $ref: '../../Gateway/Appointment/appointment-id-cancel.yaml'
+  /appointment/{id}/reschedule:
+    $ref: '../../Gateway/Appointment/appointment-id-reschedule.yaml'

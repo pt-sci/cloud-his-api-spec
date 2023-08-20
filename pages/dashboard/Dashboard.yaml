@@ -1,0 +1,31 @@
+openapi: "3.0.2"
+info:
+  title: Cloud HIS Gateway
+  version: "1.0"
+  description: API Gateway for HIS platform
+
+servers:
+  - url: https://cloud-his-gateway-production.up.railway.app/
+
+components:
+  securitySchemes:
+    bearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerToken: []
+
+tags:
+  - name: dashboard
+
+paths:
+  /dashboard/employees/count:
+    $ref: '../../Gateway/Dashboard/dashboard-employees-count.yaml'
+  /dashboard/faskes/count:
+    $ref: '../../Gateway/Dashboard/dashboard-faskes-count.yaml'
+  /dashboard/patient/chart:
+    $ref: '../../Gateway/Dashboard/dashboard-patient-chart.yaml'
+  /dashboard/employees/chart:
+    $ref: '../../Gateway/Dashboard/dashboard-employees-chart.yaml'

@@ -93,3 +93,31 @@ put:
       $ref: "../../responses/403.yaml"
     "500":
       $ref: "../../responses/500.yaml"
+patch:
+  tags:
+    - item margin
+  description: Change status item margin
+  parameters:
+    - name: _id
+      in: params
+      required: true
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            value:
+              type: boolean
+  responses:
+    "200":
+      $ref: "../../responses/200.yaml"
+    "401":
+      $ref: "../../responses/401.yaml"
+    "403":
+      $ref: "../../responses/403.yaml"
+    "500":
+      $ref: "../../responses/500.yaml"

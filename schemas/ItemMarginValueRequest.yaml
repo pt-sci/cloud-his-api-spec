@@ -1,0 +1,29 @@
+type: object
+properties:
+  starting_value:
+    type: number
+  ending_value:
+    type: number
+  global_margin_percentage:
+    type: number
+  op_margin_percentage:
+    type: number
+  is_op_with_ppn:
+    type: boolean
+  ip_global_margin_percentage:
+    type: number
+  is_ip_with_ppn:
+    type: boolean
+  ip_detailed_margin_percentage:
+    type: array
+    items:
+      type: object
+      properties:
+        class:
+          type: string
+        margin_percentage:
+          type: number
+  otc_margin_percentage:
+    type: number
+  is_otc_with_ppn:
+    type: boolean
